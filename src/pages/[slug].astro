@@ -1,0 +1,220 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
+import { marked } from 'marked';
+
+export async function getStaticPaths() {
+  const articles = await getCollection('articles');
+  return articles.map(article => ({
+    params: { slug: article.data.slug },
+    props: { article },
+  }));
+}
+
+interface Props {
+  article: CollectionEntry<'articles'>;
+}
+
+const { article } = Astro.props;
+const { title, image, imageAlt, excerpt, categories, categorySlugs, author, date } = article.data;
+const htmlContent = marked.parse(article.body ?? '') as string;
+
+function fmtDate(iso: string | Date) {
+  return new Date(iso).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+}
+---
+
+<Layout title={title} description={excerpt} image={image} type="article">
+  <Header />
+
+  <main class="container">
+    <article class="article-single prose">
+      <header class="article-head">
+        <div class="cat-chips">
+          {categorySlugs.map((slug, i) => (
+            <a href={`/category/${slug}/`} class={`cat-pill cat-${slug}`}>{categories[i]}</a>
+          ))}
+        </div>
+        <h1>{title}</h1>
+        {excerpt && <p class="lede">{excerpt}</p>}
+        <div class="byline-row">
+          <span class="avatar">{author ? author.charAt(0) : 'E'}</span>
+          <div class="byline-meta">
+            <span class="byline-author">{author ?? 'Editorial'}</span>
+            <span class="byline-date">{fmtDate(date)}</span>
+          </div>
+        </div>
+      </header>
+
+      {image && (
+        <figure class="article-hero">
+          <img src={image} alt={imageAlt ?? title} />
+        </figure>
+      )}
+
+      <div class="article-body" set:html={htmlContent}></div>
+
+      <footer class="article-footer">
+        <div class="cat-chips">
+          {categorySlugs.map((slug, i) => (
+            <a href={`/category/${slug}/`} class={`cat-pill cat-${slug}`}>{categories[i]}</a>
+          ))}
+        </div>
+        <p class="end-mark">— Editorial, RevueAura</p>
+      </footer>
+    </article>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .article-single {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: 60px 0 40px;
+  }
+
+  .article-head {
+    text-align: center;
+    margin-bottom: 36px;
+  }
+
+  .cat-chips {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+  }
+
+  .article-head h1 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(2rem, 4.2vw, 3.2rem);
+    line-height: 1.1;
+    letter-spacing: -0.022em;
+    margin: 0 0 20px;
+  }
+
+  .lede {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.2rem;
+    line-height: 1.55;
+    color: var(--text-soft);
+    max-width: 600px;
+    margin: 0 auto 28px;
+  }
+
+  .byline-row {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 14px;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+  }
+
+  .avatar {
+    display: inline-grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: white;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.85rem;
+  }
+
+  .byline-meta {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    line-height: 1.2;
+  }
+
+  .byline-author {
+    font-weight: 600;
+    font-size: 0.88rem;
+    color: var(--text);
+  }
+
+  .byline-date {
+    font-size: 0.74rem;
+    color: var(--text-muted);
+  }
+
+  .article-hero {
+    margin: 0 0 36px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+
+  .article-hero img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+
+  .article-body :global(h2) {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.7rem;
+    margin-top: 2em;
+    letter-spacing: -0.012em;
+  }
+
+  .article-body :global(h3) {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.25rem;
+    margin-top: 1.6em;
+  }
+
+  .article-body :global(p) {
+    font-size: 1.0625rem;
+    line-height: 1.78;
+  }
+
+  .article-body :global(blockquote) {
+    margin: 1.6em 0;
+    padding: 0.4em 0 0.4em 1.4em;
+    border-left: 3px solid var(--accent);
+    font-family: var(--font-display);
+    font-size: 1.18rem;
+    font-style: italic;
+    color: var(--text-soft);
+  }
+
+  .article-body :global(img) {
+    margin: 1.8em 0;
+    border-radius: var(--radius-lg);
+  }
+
+  .article-body :global(ul), .article-body :global(ol) {
+    padding-left: 1.4em;
+    line-height: 1.78;
+  }
+
+  .article-body :global(li) { margin: 0.4em 0; }
+
+  .article-footer {
+    margin-top: 60px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    text-align: center;
+  }
+
+  .end-mark {
+    font-family: var(--font-display);
+    font-style: italic;
+    color: var(--text-muted);
+    margin: 24px 0 0;
+  }
+</style>

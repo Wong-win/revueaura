@@ -1,0 +1,61 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="About" description="RevueAura is an editorial lifestyle magazine exploring the quiet currents of style, beauty, home, technology, and outdoor living.">
+  <Header />
+  <main class="container">
+    <article class="prose about-page">
+      <header class="page-head">
+        <span class="cat-pill">About</span>
+        <h1>An editorial magazine, written slowly.</h1>
+      </header>
+
+      <p>RevueAura is a lifestyle magazine that takes the long view. Across five sections — Fashion, Beauty, Home, Tech, and Outdoors — we publish considered essays, cultural notes, and slow reads for readers who want more than recommendations.</p>
+
+      <p>We don't publish buying guides. We don't rank products. We don't chase trends. We write about how things feel — what a morning ritual does to the texture of a day, what a slow-fashion wardrobe asks of its wearer, what it means to make a home an extension of mood rather than a checklist.</p>
+
+      <h2>What you'll find here</h2>
+      <ul>
+        <li><strong>Long-form essays</strong> — 1500 to 2200 words, read at your own pace.</li>
+        <li><strong>Five editorial desks</strong> — fashion, beauty, home, tech, outdoors — each treated with the same editorial weight.</li>
+        <li><strong>A reading-first experience</strong> — no popups, no affiliate noise, no urgency.</li>
+      </ul>
+
+      <h2>What you won't find</h2>
+      <ul>
+        <li>No "best of" round-ups.</li>
+        <li>No product comparison tables.</li>
+        <li>No sponsored placements.</li>
+        <li>No "buy now" CTAs.</li>
+      </ul>
+
+      <p>The work is written by a small editorial team. The pace is deliberate. The voice is consistent. The aim is simple: a magazine that respects your attention.</p>
+    </article>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .about-page {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: 60px 0;
+  }
+
+  .page-head {
+    margin-bottom: 36px;
+    text-align: center;
+  }
+
+  .page-head h1 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(2rem, 4.4vw, 3.2rem);
+    line-height: 1.1;
+    letter-spacing: -0.022em;
+    margin: 18px 0 0;
+  }
+</style>

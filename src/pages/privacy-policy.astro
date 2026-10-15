@@ -1,0 +1,82 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Privacy Policy" description="How RevueAura handles your data.">
+  <Header />
+  <main class="container">
+    <article class="prose privacy-page">
+      <header class="page-head">
+        <span class="cat-pill">Legal</span>
+        <h1>Privacy Policy</h1>
+        <p class="lede">A plain-English summary of how we handle data on RevueAura.</p>
+      </header>
+
+      <p>This Privacy Policy describes how RevueAura ("we," "us," or "our") collects, uses, and protects information when you visit revueaura.com (the "Site"). By using the Site, you agree to the practices described below.</p>
+
+      <h2>Information we collect</h2>
+      <p>We collect a minimal amount of information necessary to operate and improve the Site:</p>
+      <ul>
+        <li><strong>Analytics</strong> — anonymous usage data (pages viewed, referrer, device type) via Google Analytics 4. We do not collect personally identifying information.</li>
+        <li><strong>Cookies</strong> — small files placed by your browser. We use only first-party cookies for analytics; no advertising cookies are set.</li>
+        <li><strong>Voluntary submissions</strong> — if you write to us at one of our editorial addresses, we retain the message and any contact details you provide.</li>
+      </ul>
+
+      <h2>How we use information</h2>
+      <p>Analytics data helps us understand which essays resonate, where readers arrive from, and how the Site performs across devices. We use this information only in aggregate to inform editorial and technical decisions.</p>
+
+      <h2>Third parties</h2>
+      <p>We use Google Analytics 4 for analytics. Google may collect data as described in its own privacy policy. We do not embed advertising networks, social-tracking pixels, or third-party remarketing scripts.</p>
+
+      <h2>Your rights</h2>
+      <p>You can disable cookies via your browser settings at any time. You can also request deletion of any voluntary correspondence by writing to <a href="mailto:privacy@revueaura.com">privacy@revueaura.com</a>.</p>
+
+      <h2>Children's privacy</h2>
+      <p>The Site is not directed at children under 13, and we do not knowingly collect information from them.</p>
+
+      <h2>Changes to this policy</h2>
+      <p>If we update this Privacy Policy, we'll revise the date below. Material changes will be noted on the homepage for at least 30 days.</p>
+
+      <p class="updated">Last updated: October 15, 2026</p>
+    </article>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .privacy-page {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: 60px 0;
+  }
+
+  .page-head {
+    margin-bottom: 36px;
+    text-align: center;
+  }
+
+  .page-head h1 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(2rem, 4.4vw, 3.2rem);
+    margin: 18px 0 14px;
+  }
+
+  .lede {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--text-soft);
+    margin: 0;
+  }
+
+  .updated {
+    font-family: var(--font-display);
+    font-style: italic;
+    color: var(--text-muted);
+    margin-top: 40px;
+    text-align: center;
+  }
+</style>

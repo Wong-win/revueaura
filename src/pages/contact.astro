@@ -1,0 +1,115 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Contact" description="Get in touch with the RevueAura editorial desk.">
+  <Header />
+  <main class="container">
+    <article class="prose contact-page">
+      <header class="page-head">
+        <span class="cat-pill">Contact</span>
+        <h1>Write to us.</h1>
+        <p class="lede">Pitch a story, share a tip, or simply say hello. We read everything.</p>
+      </header>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h2>Editorial</h2>
+          <p>Pitches, op-eds, and editorial correspondence.</p>
+          <a href="mailto:editorial@revueaura.com" class="email-link">editorial@revueaura.com</a>
+        </div>
+
+        <div class="contact-card">
+          <h2>Tips</h2>
+          <p>Confidential leads, source notes, and field reporting.</p>
+          <a href="mailto:tips@revueaura.com" class="email-link">tips@revueaura.com</a>
+        </div>
+
+        <div class="contact-card">
+          <h2>Letters</h2>
+          <p>Reader mail, corrections, and friendly replies.</p>
+          <a href="mailto:letters@revueaura.com" class="email-link">letters@revueaura.com</a>
+        </div>
+      </div>
+
+      <p class="response-note">We aim to respond within five working days. Not all pitches can be published, but every thoughtful note gets a reply.</p>
+    </article>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .contact-page {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: 60px 0;
+  }
+
+  .page-head {
+    margin-bottom: 48px;
+    text-align: center;
+  }
+
+  .page-head h1 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(2rem, 4.4vw, 3.2rem);
+    line-height: 1.1;
+    letter-spacing: -0.022em;
+    margin: 18px 0 14px;
+  }
+
+  .lede {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--text-soft);
+    margin: 0;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    margin-bottom: 36px;
+  }
+
+  .contact-card {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+  }
+
+  .contact-card h2 {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    margin: 0 0 8px;
+    color: var(--accent-deep);
+  }
+
+  .contact-card p {
+    font-size: 0.92rem;
+    color: var(--text-soft);
+    margin-bottom: 14px;
+  }
+
+  .email-link {
+    font-family: var(--font-body);
+    font-weight: 500;
+    color: var(--text);
+    border-bottom: 1px solid var(--accent);
+  }
+
+  .email-link:hover { color: var(--accent-deep); }
+
+  .response-note {
+    font-family: var(--font-display);
+    font-style: italic;
+    color: var(--text-muted);
+    text-align: center;
+    margin-top: 32px;
+  }
+</style>

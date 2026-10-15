@@ -1,0 +1,179 @@
+---
+import { CATEGORIES } from '../content.config';
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col brand-col">
+        <a href="/" class="footer-brand">
+          <span class="brand-mark">RA</span>
+          <span class="brand-name">RevueAura</span>
+        </a>
+        <p class="brand-tag">An editorial lifestyle magazine exploring the quiet currents of style, beauty, home, technology, and outdoor living.</p>
+        <div class="socials">
+          <a href="#" aria-label="Instagram" class="social">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/>
+            </svg>
+          </a>
+          <a href="#" aria-label="X" class="social">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="#" aria-label="Facebook" class="social">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.07C22 6.51 17.52 2 12 2S2 6.51 2 12.07c0 4.99 3.66 9.13 8.44 9.93v-7.02H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.91h-2.33V22c4.78-.8 8.43-4.94 8.43-9.93z"/></svg>
+          </a>
+          <a href="#" aria-label="Telegram" class="social">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22 2L2 11.5l5.5 2 2.5 6.5 3.5-4 5 4 3.5-18zM9.5 14.5L17 8l-7 7-1 3z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Coverage</h4>
+        <ul>
+          {Object.entries(CATEGORIES).map(([slug, label]) => (
+            <li><a href={`/category/${slug}/`}>{label}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>RevueAura</h4>
+        <ul>
+          <li><a href="/">Latest</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/contact/">Submit a tip</a></li>
+          <li><a href="/privacy-policy/">Privacy</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© {year} RevueAura — Editorial lifestyle, written with care.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    margin-top: 80px;
+    background: var(--surface);
+    border-top: 1px solid var(--rule);
+    padding: 60px 0 30px;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 40px;
+  }
+
+  .footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .brand-mark {
+    display: inline-grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 7px;
+    background: var(--accent);
+    color: white;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.85rem;
+  }
+
+  .brand-name {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
+  .brand-tag {
+    font-family: var(--font-display);
+    font-style: italic;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0 0 18px;
+    max-width: 360px;
+  }
+
+  .socials {
+    display: flex;
+    gap: 8px;
+  }
+
+  .social {
+    display: inline-grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    border: 1px solid var(--rule);
+    border-radius: 50%;
+    color: var(--text-muted);
+    transition: all .18s ease;
+  }
+
+  .social:hover {
+    border-color: var(--accent);
+    color: var(--accent-deep);
+    background: var(--accent-soft);
+  }
+
+  .footer-col h4 {
+    font-family: var(--font-body);
+    font-size: 0.74rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin: 0 0 14px;
+  }
+
+  .footer-col ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .footer-col li {
+    padding: 4px 0;
+  }
+
+  .footer-col a {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--text-soft);
+  }
+
+  .footer-col a:hover { color: var(--accent-deep); }
+
+  .footer-bottom {
+    border-top: 1px solid var(--rule);
+    padding-top: 24px;
+  }
+
+  .footer-bottom p {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin: 0;
+    text-align: center;
+  }
+
+  @media (max-width: 860px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 36px;
+    }
+  }
+</style>

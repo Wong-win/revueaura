@@ -1,0 +1,250 @@
+---
+import { CATEGORIES } from '../content.config';
+
+const currentPath = Astro.url.pathname;
+
+function isActive(href: string) {
+  if (href === '/') return currentPath === '/';
+  return currentPath.startsWith(href);
+}
+---
+
+<header class="site-header">
+  <div class="header-top-row">
+    <div class="container header-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark">RA</span>
+        <span class="brand-name">RevueAura</span>
+      </a>
+
+      <button class="mobile-toggle" aria-label="Toggle navigation" id="mobileToggle">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <nav class="primary-nav" id="primaryNav">
+    <div class="container nav-inner">
+      <ul class="cat-list">
+        <li><a href="/" class={isActive('/') && currentPath === '/' ? 'active' : ''}>Latest</a></li>
+        {Object.entries(CATEGORIES).map(([slug, label]) => (
+          <li>
+            <a
+              href={`/category/${slug}/`}
+              class:list={[`cat-link cat-${slug}`, { active: isActive(`/category/${slug}`) }]}
+            >
+              {label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </nav>
+
+  <div class="secondary-bar">
+    <div class="container secondary-inner">
+      <div class="meta-left">
+        <span class="tagline">An editorial lifestyle magazine</span>
+      </div>
+      <div class="meta-right">
+        <a href="/contact/" class="util-link">Submit a tip</a>
+        <span class="util-sep">·</span>
+        <a href="/about/" class="util-link">About</a>
+        <span class="util-sep">·</span>
+        <button class="util-link search-btn" aria-label="Search">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+          <kbd>⌘K</kbd>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(247, 243, 238, 0.86);
+    backdrop-filter: saturate(160%) blur(12px);
+    -webkit-backdrop-filter: saturate(160%) blur(12px);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .header-top-row {
+    padding: 18px 0 12px;
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .brand-mark {
+    display: inline-grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: var(--accent);
+    color: white;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: -0.02em;
+  }
+
+  .brand-name {
+    font-family: var(--font-display);
+    font-size: 1.45rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--text);
+  }
+
+  .mobile-toggle {
+    display: none;
+    position: absolute;
+    right: 0;
+    background: transparent;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+  }
+
+  .mobile-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--text);
+    margin: 4px 0;
+    border-radius: 2px;
+  }
+
+  .primary-nav {
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    background: rgba(253, 250, 246, 0.6);
+  }
+
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cat-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px 26px;
+    list-style: none;
+    margin: 0;
+    padding: 12px 0;
+  }
+
+  .cat-list a {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-soft);
+    padding: 4px 0;
+    position: relative;
+    letter-spacing: 0.005em;
+  }
+
+  .cat-list a:hover,
+  .cat-list a.active {
+    color: var(--text);
+  }
+
+  .cat-list a.active::after {
+    content: '';
+    position: absolute;
+    left: 0; right: 0; bottom: -13px;
+    height: 2px;
+    background: var(--accent);
+  }
+
+  .secondary-bar {
+    background: var(--surface);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .secondary-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 28px;
+    font-size: 0.78rem;
+  }
+
+  .tagline {
+    font-family: var(--font-display);
+    font-style: italic;
+    color: var(--text-muted);
+    letter-spacing: 0.005em;
+  }
+
+  .meta-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .util-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-muted);
+    background: transparent;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    padding: 2px 0;
+  }
+
+  .util-link:hover { color: var(--text); }
+
+  .util-sep { color: var(--rule); }
+
+  .search-btn kbd {
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    padding: 1px 5px;
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    color: var(--text-muted);
+    background: var(--bg);
+  }
+
+  @media (max-width: 860px) {
+    .mobile-toggle { display: block; }
+    .primary-nav { display: none; }
+    .primary-nav.open { display: block; }
+    .cat-list { flex-direction: column; align-items: stretch; gap: 0; padding: 8px 0; }
+    .cat-list li { padding: 6px 0; border-bottom: 1px solid var(--rule); }
+    .cat-list a.active::after { display: none; }
+    .tagline { display: none; }
+  }
+</style>
+
+<script>
+  const toggle = document.getElementById('mobileToggle');
+  const nav = document.getElementById('primaryNav');
+  if (toggle && nav) {
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('open');
+    });
+  }
+</script>

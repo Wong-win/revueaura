@@ -21,8 +21,11 @@ const { article } = Astro.props;
 const { title, image, imageAlt, excerpt, categories, categorySlugs, author, date } = article.data;
 const htmlContent = marked.parse(article.body ?? '') as string;
 
-function fmtDate(iso: string | Date) {
-  return new Date(iso).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+function fmtFull(d: string | Date) {
+  return new Date(d).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+}
+function authorInitial(name?: string) {
+  return (name ?? 'E').charAt(0).toUpperCase();
 }
 ---
 
@@ -32,19 +35,16 @@ function fmtDate(iso: string | Date) {
   <main class="container">
     <article class="article-single prose">
       <header class="article-head">
-        <div class="cat-chips">
-          {categorySlugs.map((slug, i) => (
-            <a href={`/category/${slug}/`} class={`cat-pill cat-${slug}`}>{categories[i]}</a>
-          ))}
-        </div>
+        <a href={`/category/${categorySlugs[0]}/`}>
+          <span class={`tag tag-${categorySlugs[0]}`}>{categories[0]}</span>
+        </a>
         <h1>{title}</h1>
         {excerpt && <p class="lede">{excerpt}</p>}
-        <div class="byline-row">
-          <span class="avatar">{author ? author.charAt(0) : 'E'}</span>
-          <div class="byline-meta">
-            <span class="byline-author">{author ?? 'Editorial'}</span>
-            <span class="byline-date">{fmtDate(date)}</span>
-          </div>
+        <div class="byline">
+          <span class="avatar">{authorInitial(author)}</span>
+          <span class="byline-name">{author ?? 'Editorial'}</span>
+          <span class="byline-dot">·</span>
+          <span class="byline-time">{fmtFull(date)}</span>
         </div>
       </header>
 
@@ -57,12 +57,11 @@ function fmtDate(iso: string | Date) {
       <div class="article-body" set:html={htmlContent}></div>
 
       <footer class="article-footer">
-        <div class="cat-chips">
-          {categorySlugs.map((slug, i) => (
-            <a href={`/category/${slug}/`} class={`cat-pill cat-${slug}`}>{categories[i]}</a>
+        <div class="tag-row">
+          {categorySlugs.map((s, i) => (
+            <a href={`/category/${s}/`}><span class={`tag tag-${s}`}>{categories[i]}</span></a>
           ))}
         </div>
-        <p class="end-mark">— Editorial, RevueAura</p>
       </footer>
     </article>
   </main>
@@ -74,85 +73,56 @@ function fmtDate(iso: string | Date) {
   .article-single {
     max-width: var(--content-width);
     margin: 0 auto;
-    padding: 60px 0 40px;
+    padding: 36px 0 40px;
   }
 
   .article-head {
-    text-align: center;
-    margin-bottom: 36px;
-  }
-
-  .cat-chips {
-    display: flex;
-    gap: 8px;
-    justify-content: center;
-    margin-bottom: 18px;
-    flex-wrap: wrap;
+    margin-bottom: 28px;
+    text-align: left;
   }
 
   .article-head h1 {
-    font-family: var(--font-display);
+    font-family: var(--font-body);
     font-weight: 700;
-    font-size: clamp(2rem, 4.2vw, 3.2rem);
-    line-height: 1.1;
-    letter-spacing: -0.022em;
-    margin: 0 0 20px;
+    font-size: clamp(1.8rem, 3.6vw, 2.6rem);
+    line-height: 1.16;
+    letter-spacing: -0.02em;
+    margin: 12px 0 14px;
   }
 
   .lede {
-    font-family: var(--font-display);
-    font-style: italic;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     line-height: 1.55;
     color: var(--text-soft);
-    max-width: 600px;
-    margin: 0 auto 28px;
+    margin-bottom: 18px;
   }
 
-  .byline-row {
-    display: inline-flex;
+  .byline {
+    display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 8px 14px;
-    background: var(--surface);
-    border: 1px solid var(--rule);
-    border-radius: 999px;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
   }
 
   .avatar {
     display: inline-grid;
     place-items: center;
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
     border-radius: 50%;
     background: var(--accent);
     color: white;
-    font-family: var(--font-display);
+    font-size: 0.75rem;
     font-weight: 700;
-    font-size: 0.85rem;
   }
 
-  .byline-meta {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    line-height: 1.2;
-  }
-
-  .byline-author {
-    font-weight: 600;
-    font-size: 0.88rem;
-    color: var(--text);
-  }
-
-  .byline-date {
-    font-size: 0.74rem;
-    color: var(--text-muted);
-  }
+  .byline-name { font-weight: 600; color: var(--text); }
+  .byline-dot { color: var(--rule); }
 
   .article-hero {
-    margin: 0 0 36px;
-    border-radius: var(--radius-lg);
+    margin: 0 0 28px;
+    border-radius: var(--radius);
     overflow: hidden;
   }
 
@@ -163,58 +133,54 @@ function fmtDate(iso: string | Date) {
   }
 
   .article-body :global(h2) {
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: 1.7rem;
-    margin-top: 2em;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 1.4rem;
+    margin-top: 1.8em;
     letter-spacing: -0.012em;
   }
 
   .article-body :global(h3) {
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: 1.25rem;
-    margin-top: 1.6em;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 1.15rem;
+    margin-top: 1.4em;
   }
 
   .article-body :global(p) {
     font-size: 1.0625rem;
-    line-height: 1.78;
+    line-height: 1.72;
   }
 
   .article-body :global(blockquote) {
     margin: 1.6em 0;
-    padding: 0.4em 0 0.4em 1.4em;
+    padding: 0 0 0 1em;
     border-left: 3px solid var(--accent);
-    font-family: var(--font-display);
-    font-size: 1.18rem;
-    font-style: italic;
+    font-size: 1.05rem;
     color: var(--text-soft);
   }
 
   .article-body :global(img) {
     margin: 1.8em 0;
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius);
   }
 
   .article-body :global(ul), .article-body :global(ol) {
     padding-left: 1.4em;
-    line-height: 1.78;
+    line-height: 1.7;
   }
 
-  .article-body :global(li) { margin: 0.4em 0; }
+  .article-body :global(li) { margin: 0.3em 0; }
 
   .article-footer {
-    margin-top: 60px;
-    padding-top: 24px;
+    margin-top: 48px;
+    padding-top: 20px;
     border-top: 1px solid var(--rule);
-    text-align: center;
   }
 
-  .end-mark {
-    font-family: var(--font-display);
-    font-style: italic;
-    color: var(--text-muted);
-    margin: 24px 0 0;
+  .tag-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
   }
 </style>

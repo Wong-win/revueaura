@@ -9,7 +9,7 @@ import Footer from '../components/Footer.astro';
   <main class="container">
     <article class="prose about-page">
       <header class="page-head">
-        <span class="cat-pill">About</span>
+        <span class="tag">About</span>
         <h1>An editorial magazine, written slowly.</h1>
       </header>
 
@@ -42,20 +42,19 @@ import Footer from '../components/Footer.astro';
   .about-page {
     max-width: var(--content-width);
     margin: 0 auto;
-    padding: 60px 0;
+    padding: 36px 0;
   }
 
   .page-head {
-    margin-bottom: 36px;
-    text-align: center;
+    margin-bottom: 28px;
   }
 
   .page-head h1 {
-    font-family: var(--font-display);
+    font-family: var(--font-body);
     font-weight: 700;
-    font-size: clamp(2rem, 4.4vw, 3.2rem);
-    line-height: 1.1;
-    letter-spacing: -0.022em;
-    margin: 18px 0 0;
+    font-size: clamp(1.7rem, 3vw, 2.2rem);
+    line-height: 1.18;
+    letter-spacing: -0.018em;
+    margin: 12px 0 0;
   }
 </style>

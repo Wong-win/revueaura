@@ -9,7 +9,7 @@ import Footer from '../components/Footer.astro';
   <main class="container">
     <article class="prose privacy-page">
       <header class="page-head">
-        <span class="cat-pill">Legal</span>
+        <span class="tag">Legal</span>
         <h1>Privacy Policy</h1>
         <p class="lede">A plain-English summary of how we handle data on RevueAura.</p>
       </header>
@@ -49,34 +49,27 @@ import Footer from '../components/Footer.astro';
   .privacy-page {
     max-width: var(--content-width);
     margin: 0 auto;
-    padding: 60px 0;
+    padding: 36px 0;
   }
 
-  .page-head {
-    margin-bottom: 36px;
-    text-align: center;
-  }
+  .page-head { margin-bottom: 28px; }
 
   .page-head h1 {
-    font-family: var(--font-display);
+    font-family: var(--font-body);
     font-weight: 700;
-    font-size: clamp(2rem, 4.4vw, 3.2rem);
-    margin: 18px 0 14px;
+    font-size: clamp(1.7rem, 3vw, 2.2rem);
+    margin: 12px 0 10px;
   }
 
   .lede {
-    font-family: var(--font-display);
-    font-style: italic;
-    font-size: 1.2rem;
+    font-size: 1.02rem;
     color: var(--text-soft);
     margin: 0;
   }
 
   .updated {
-    font-family: var(--font-display);
-    font-style: italic;
+    font-size: 0.85rem;
     color: var(--text-muted);
-    margin-top: 40px;
-    text-align: center;
+    margin-top: 32px;
   }
 </style>

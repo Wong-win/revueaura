@@ -4,7 +4,7 @@ date: 2026-10-15
 slug: "makeup-self-expression"
 image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?crop=entropy&cs=tinysrgb&w=1800&q=82"
 imageAlt: "A flat-lay of scattered makeup brushes and pigment pots on a linen surface, morning window light raking across the scene"
-categories: ["Beauty & Personal Care"]
+categories: ["Beauty"]
 categorySlugs: ["beauty"]
 excerpt: "On the small morning theater of the mirror, the brush as a sentence, and the face as a draft we are always revising."
 author: "Editorial"

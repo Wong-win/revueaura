@@ -4,7 +4,7 @@ date: 2026-10-15
 slug: "fragrance-architecture-memory"
 image: "https://images.unsplash.com/photo-1615634260167-c8cdede054de?crop=entropy&cs=tinysrgb&w=1800&q=82"
 imageAlt: "A small glass perfume bottle catching late afternoon light on a wooden dressing table, beside a folded silk scarf"
-categories: ["Beauty & Personal Care"]
+categories: ["Beauty"]
 categorySlugs: ["beauty"]
 excerpt: "The nose is wired directly into the parts of the brain that remember who we were - and what it means to wear, on behalf of every future stranger, a scent."
 author: "Editorial"

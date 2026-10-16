@@ -4,7 +4,7 @@ date: "2026-10-15"
 slug: "tech-as-design-object"
 image: "https://images.unsplash.com/photo-1476357471311-43c0db9fb2b4?crop=entropy&cs=tinysrgb&w=1800&q=82"
 imageAlt: "A minimalist desk setup with a slim aluminum monitor, a small plant, and natural wood tones"
-categories: ["Electronics & Consumer Tech"]
+categories: ["Tech"]
 categorySlugs: ["tech"]
 excerpt: "How a generation came to treat its devices like art objects — and what that ambivalent reverence reveals."
 author: "Editorial"

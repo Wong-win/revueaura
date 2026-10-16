@@ -4,7 +4,7 @@ date: 2026-10-15
 slug: "slow-home-movement"
 image: "https://images.unsplash.com/photo-1784028260705-34d9b65a95b2?crop=entropy&cs=tinysrgb&w=1800&q=82"
 imageAlt: "A minimalist living room with a worn leather chair and a single stack of books"
-categories: ["Home & Living"]
+categories: ["Home"]
 categorySlugs: ["home"]
 excerpt: "The slow home is not a style. It is a refusal to keep up with the rooms we have been taught to want."
 author: "Editorial"

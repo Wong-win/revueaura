@@ -4,7 +4,7 @@ date: 2026-10-15
 slug: "cycling-seeing-city"
 image: "https://images.unsplash.com/photo-1602727751184-d7b7d0cd9d8d?crop=entropy&cs=tinysrgb&w=1800&q=82"
 imageAlt: "A cyclist crossing a long iron bridge at golden hour"
-categories: ["Sports, Outdoors & Fitness"]
+categories: ["Outdoors"]
 categorySlugs: ["outdoor"]
 excerpt: "A bicycle is the only vehicle that lets you read a city like a sentence."
 author: "Editorial"

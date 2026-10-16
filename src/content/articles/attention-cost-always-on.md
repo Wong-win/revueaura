@@ -4,7 +4,7 @@ date: "2026-10-15"
 slug: "attention-cost-always-on"
 image: "https://images.unsplash.com/photo-1531323386183-43890b5c766d?crop=entropy&cs=tinysrgb&w=1800&q=82"
 imageAlt: "A person seen from behind at a window, holding a phone, city lights blurred in the distance"
-categories: ["Electronics & Consumer Tech"]
+categories: ["Tech"]
 categorySlugs: ["tech"]
 excerpt: "On what we lose, slowly and without noticing, when the notification lights stay always-on — and what an hour of recovered attention actually feels like."
 author: "Editorial"

@@ -4,7 +4,7 @@ date: 2026-10-15
 slug: "minimalist-outdoor-gear"
 image: "https://images.unsplash.com/photo-1762549957454-d5551dfe2f44?crop=entropy&cs=tinysrgb&w=1800&q=82"
 imageAlt: "A single weathered backpack hanging by a cabin doorway at dawn"
-categories: ["Sports, Outdoors & Fitness"]
+categories: ["Outdoors"]
 categorySlugs: ["outdoor"]
 excerpt: "What you do not carry is what teaches you what you actually need."
 author: "Editorial"

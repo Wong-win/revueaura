@@ -21,11 +21,11 @@ export const collections = { articles };
 
 // Category display names — used for labels and meta
 export const CATEGORIES = {
-  fashion: 'Fashion & Apparel',
-  beauty: 'Beauty & Personal Care',
-  home: 'Home & Living',
-  tech: 'Electronics & Consumer Tech',
-  outdoor: 'Sports, Outdoors & Fitness',
+  fashion: 'Fashion',
+  beauty: 'Beauty',
+  home: 'Home',
+  tech: 'Tech',
+  outdoor: 'Outdoors',
 } as const;
 
 // Category accent colors — for pills and chips

@@ -13,24 +13,8 @@ const articles = (await getCollection('articles')).sort((a, b) => {
 });
 
 const featured = articles.find(a => a.data.pinned) ?? articles[0];
-const newswire = articles.slice(0, 8);
+const newswire = articles.slice(0, 6);
 const latest = articles.filter(a => a.data.slug !== featured.data.slug).slice(0, 12);
-
-function fmtRelative(iso: string | Date) {
-  const d = new Date(iso);
-  const now = Date.now();
-  const diff = now - d.getTime();
-  const min = 60000, hr = 3600000, day = 86400000;
-  if (diff < min) return 'just now';
-  if (diff < hr) return `${Math.floor(diff / min)}m ago`;
-  if (diff < day) return `${Math.floor(diff / hr)}h ago`;
-  if (diff < 7 * day) return `${Math.floor(diff / day)}d ago`;
-  return d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
-}
-
-function authorInitial(name?: string) {
-  return (name ?? 'E').charAt(0).toUpperCase();
-}
 ---
 
 <Layout title="RevueAura">
@@ -49,12 +33,6 @@ function authorInitial(name?: string) {
           <span class={`tag tag-${featured.data.categorySlugs[0]}`}>{featured.data.categories[0]}</span>
         </a>
         <a href={`/${featured.data.slug}/`}><h1>{featured.data.title}</h1></a>
-        <div class="byline">
-          <span class="avatar">{authorInitial(featured.data.author)}</span>
-          <span class="byline-name">{featured.data.author ?? 'Editorial'}</span>
-          <span class="byline-dot">·</span>
-          <span class="byline-time">{fmtRelative(featured.data.date)}</span>
-        </div>
       </div>
     </section>
 
@@ -77,12 +55,6 @@ function authorInitial(name?: string) {
                 <span class={`tag tag-${a.data.categorySlugs[0]}`}>{a.data.categories[0]}</span>
               </a>
               <a href={`/${a.data.slug}/`}><h3>{a.data.title}</h3></a>
-              <div class="byline">
-                <span class="avatar avatar-sm">{authorInitial(a.data.author)}</span>
-                <span class="byline-name">{a.data.author ?? 'Editorial'}</span>
-                <span class="byline-dot">·</span>
-                <span class="byline-time">{fmtRelative(a.data.date)}</span>
-              </div>
             </article>
           ))}
         </div>
@@ -97,8 +69,13 @@ function authorInitial(name?: string) {
         <ul class="newswire-list">
           {newswire.map(a => (
             <li class="nw-item">
-              <span class="nw-time">{fmtRelative(a.data.date)}</span>
-              <a href={`/${a.data.slug}/`} class="nw-headline">{a.data.title}</a>
+              <a href={`/${a.data.slug}/`} class="nw-img">
+                <img src={a.data.image} alt={a.data.imageAlt ?? a.data.title} loading="lazy" />
+              </a>
+              <div class="nw-body">
+                <a href={`/${a.data.slug}/`} class="nw-headline">{a.data.title}</a>
+                <a href={`/category/${a.data.categorySlugs[0]}/`} class={`nw-cat tag tag-${a.data.categorySlugs[0]}`}>{a.data.categories[0]}</a>
+              </div>
             </li>
           ))}
         </ul>
@@ -107,17 +84,21 @@ function authorInitial(name?: string) {
         <div class="pulse">
           <div class="pulse-head">
             <h3>The Pulse</h3>
-            <span class="pulse-sub">Live quote unavailable.</span>
+            <span class="pulse-sub">This week's reads.</span>
           </div>
-          <p class="pulse-blurb">What we're thinking about this week.</p>
           <ul class="pulse-list">
-            {Object.entries(CATEGORIES).slice(0, 4).map(([s, label]) => {
+            {Object.entries(CATEGORIES).map(([s, label]) => {
               const recent = articles.find(a => a.data.categorySlugs.includes(s));
               if (!recent) return null;
               return (
-                <li>
-                  <span class={`pulse-tag tag tag-${s}`}>{label}</span>
-                  <a href={`/${recent.data.slug}/`} class="pulse-title">{recent.data.title}</a>
+                <li class="pulse-item">
+                  <a href={`/${recent.data.slug}/`} class="pulse-img">
+                    <img src={recent.data.image} alt={recent.data.imageAlt ?? recent.data.title} loading="lazy" />
+                  </a>
+                  <div class="pulse-body">
+                    <span class={`pulse-tag tag tag-${s}`}>{label}</span>
+                    <a href={`/${recent.data.slug}/`} class="pulse-title">{recent.data.title}</a>
+                  </div>
                 </li>
               );
             })}
@@ -142,17 +123,8 @@ function authorInitial(name?: string) {
     max-height: 540px;
   }
 
-  .featured-img {
-    display: block;
-    width: 100%;
-    height: 100%;
-  }
-
-  .featured-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+  .featured-img { display: block; width: 100%; height: 100%; }
+  .featured-img img { width: 100%; height: 100%; object-fit: cover; }
 
   .overlay {
     position: absolute;
@@ -162,9 +134,7 @@ function authorInitial(name?: string) {
 
   .featured-body {
     position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    left: 0; right: 0; bottom: 0;
     padding: 28px 32px;
     color: white;
   }
@@ -175,14 +145,10 @@ function authorInitial(name?: string) {
     font-size: clamp(1.7rem, 4vw, 3rem);
     line-height: 1.12;
     letter-spacing: -0.02em;
-    margin: 12px 0 14px;
+    margin: 12px 0 0;
     color: white;
     max-width: 800px;
   }
-
-  .featured-body .byline { color: rgba(255,255,255,0.85); }
-  .featured-body .byline-name { color: white; }
-  .featured-body .byline-dot { color: rgba(255,255,255,0.4); }
 
   /* Two-column row */
   .row-2col {
@@ -210,19 +176,14 @@ function authorInitial(name?: string) {
     margin: 0;
   }
 
-  .see-all {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    font-weight: 500;
-  }
-
+  .see-all { font-size: 0.85rem; color: var(--text-muted); font-weight: 500; }
   .see-all:hover { color: var(--accent); }
 
   /* Cards grid — 2 columns */
   .grid-2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 28px 24px;
+    gap: 32px 24px;
   }
 
   .card { display: flex; flex-direction: column; }
@@ -248,71 +209,54 @@ function authorInitial(name?: string) {
     font-weight: 700;
     line-height: 1.28;
     letter-spacing: -0.012em;
-    margin: 0 0 10px;
+    margin: 0;
   }
 
   .card h3:hover { color: var(--accent); }
 
-  .byline {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.78rem;
-    color: var(--text-muted);
-  }
-
-  .avatar {
-    display: inline-grid;
-    place-items: center;
-    width: 26px;
-    height: 26px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #ff3b30, #ff9500, #34c759, #007aff);
-    color: white;
-    font-size: 0.72rem;
-    font-weight: 700;
-    flex-shrink: 0;
-  }
-
-  .avatar-sm { width: 22px; height: 22px; font-size: 0.68rem; }
-
-  .byline-name { font-weight: 600; color: var(--text); }
-  .byline-dot { color: var(--rule); }
-
   /* Sidebar */
   .sidebar-col { min-width: 0; }
 
-  .newswire-list {
-    list-style: none;
-    margin: 0 0 32px;
-    padding: 0;
-  }
+  .newswire-list { list-style: none; margin: 0 0 32px; padding: 0; }
 
   .nw-item {
     display: grid;
-    grid-template-columns: 80px 1fr;
-    column-gap: 14px;
-    padding: 14px 0;
+    grid-template-columns: 72px 1fr;
+    column-gap: 12px;
+    padding: 12px 0;
     border-bottom: 1px solid var(--rule-soft);
+    align-items: center;
   }
 
   .nw-item:last-child { border-bottom: none; }
 
-  .nw-time {
-    font-size: 0.76rem;
-    color: var(--text-muted);
-    align-self: start;
-    padding-top: 2px;
+  .nw-img {
+    display: block;
+    width: 72px;
+    height: 72px;
+    border-radius: 6px;
+    overflow: hidden;
   }
 
+  .nw-img img { width: 100%; height: 100%; object-fit: cover; }
+
+  .nw-body { min-width: 0; }
+
   .nw-headline {
-    font-size: 0.95rem;
+    display: block;
+    font-size: 0.92rem;
     font-weight: 600;
-    line-height: 1.3;
+    line-height: 1.32;
     color: var(--text);
+    margin-bottom: 5px;
   }
 
   .nw-headline:hover { color: var(--accent); }
+
+  .nw-cat {
+    font-size: 0.65rem;
+    padding: 2px 6px;
+  }
 
   /* Pulse widget */
   .pulse {
@@ -325,7 +269,9 @@ function authorInitial(name?: string) {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    margin-bottom: 4px;
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--rule);
   }
 
   .pulse-head h3 {
@@ -335,37 +281,45 @@ function authorInitial(name?: string) {
     margin: 0;
   }
 
-  .pulse-sub {
-    font-size: 0.7rem;
-    color: var(--text-muted);
-  }
+  .pulse-sub { font-size: 0.7rem; color: var(--text-muted); }
 
-  .pulse-blurb {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    margin: 0 0 14px;
-  }
+  .pulse-list { list-style: none; margin: 0; padding: 0; }
 
-  .pulse-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  .pulse-list li {
-    padding: 10px 0;
+  .pulse-item {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    column-gap: 12px;
+    padding: 12px 0;
     border-bottom: 1px solid var(--rule);
+    align-items: center;
   }
 
-  .pulse-list li:last-child { border-bottom: none; padding-bottom: 0; }
+  .pulse-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .pulse-item:first-child { padding-top: 0; }
 
-  .pulse-tag { margin-bottom: 4px; }
+  .pulse-img {
+    display: block;
+    width: 64px;
+    height: 64px;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .pulse-img img { width: 100%; height: 100%; object-fit: cover; }
+
+  .pulse-body { min-width: 0; }
+
+  .pulse-tag {
+    font-size: 0.62rem;
+    padding: 2px 6px;
+    margin-bottom: 4px;
+  }
 
   .pulse-title {
     display: block;
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     font-weight: 600;
-    line-height: 1.3;
+    line-height: 1.32;
     color: var(--text);
   }
 

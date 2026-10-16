@@ -4,7 +4,7 @@ date: 2026-10-15
 slug: "morning-skincare-ritual"
 image: "https://images.unsplash.com/photo-1586220742613-b731f66f7743?crop=entropy&cs=tinysrgb&w=1800&q=82"
 imageAlt: "Soft morning light falling across a porcelain bathroom sink, a folded white towel resting on the edge"
-categories: ["Beauty & Personal Care"]
+categories: ["Beauty"]
 categorySlugs: ["beauty"]
 excerpt: "On the small theater of the bathroom at dawn, and the kind of attention a face can give itself before the day begins to ask its questions."
 author: "Editorial"

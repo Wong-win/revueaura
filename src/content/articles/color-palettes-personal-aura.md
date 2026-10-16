@@ -4,7 +4,7 @@ date: 2026-10-15
 slug: "color-palettes-personal-aura"
 image: "https://images.unsplash.com/photo-1614851099175-e5b30eb6f696?crop=entropy&cs=tinysrgb&w=1800&q=82"
 imageAlt: "A folded arrangement of soft-toned fabrics in dusty rose, sage, cream, and clay"
-categories: ["Fashion & Apparel"]
+categories: ["Fashion"]
 categorySlugs: ["fashion"]
 excerpt: "Color is the quiet weather of a wardrobe — the mood you wear before anyone reads the words you say."
 author: "Editorial"

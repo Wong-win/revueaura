@@ -4,7 +4,7 @@ date: 2026-10-15
 slug: "accessories-mood"
 image: "https://images.unsplash.com/photo-1443884590026-2e4d21aee71c?crop=entropy&cs=tinysrgb&w=1800&q=82"
 imageAlt: "A wooden surface with a worn leather bag, a folded silk scarf, and small brass objects catching soft window light"
-categories: ["Fashion & Apparel"]
+categories: ["Fashion"]
 categorySlugs: ["fashion"]
 excerpt: "The small objects we carry into the day — the scarves, the bags, the pins — are how the wardrobe learns to whisper."
 author: "Editorial"

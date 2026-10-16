@@ -4,7 +4,7 @@ date: 2026-10-15
 slug: "fitness-as-ritual"
 image: "https://images.unsplash.com/photo-1518611012118-696072aa579a?crop=entropy&cs=tinysrgb&w=1800&q=82"
 imageAlt: "A woman in a quiet morning movement practice, soft window light"
-categories: ["Sports, Outdoors & Fitness"]
+categories: ["Outdoors"]
 categorySlugs: ["outdoor"]
 excerpt: "Movement, before it is exercise, is a conversation with the body that has nothing to prove."
 author: "Editorial"

@@ -4,7 +4,7 @@ date: 2026-10-15
 slug: "interior-design-mood-board"
 image: "https://images.unsplash.com/photo-1614184860170-0cab79760a7b?crop=entropy&cs=tinysrgb&w=1800&q=82"
 imageAlt: "A sunlit living room with warm linen drapes and a single clay vase on a wooden shelf"
-categories: ["Home & Living"]
+categories: ["Home"]
 categorySlugs: ["home"]
 excerpt: "A room is not a backdrop. It is the weather system under which your inner life quietly takes shape."
 author: "Editorial"

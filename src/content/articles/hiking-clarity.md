@@ -4,7 +4,7 @@ date: 2026-10-15
 slug: "hiking-clarity"
 image: "https://images.unsplash.com/photo-1551632811-561732d1e306?crop=entropy&cs=tinysrgb&w=1800&q=82"
 imageAlt: "A hiker on a high mountain ridge at sunrise, soft clouds below"
-categories: ["Sports, Outdoors & Fitness"]
+categories: ["Outdoors"]
 categorySlugs: ["outdoor"]
 excerpt: "At altitude, the questions that seemed urgent at sea level quietly lose their edges."
 author: "Editorial"

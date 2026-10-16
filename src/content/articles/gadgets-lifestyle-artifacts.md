@@ -4,7 +4,7 @@ date: "2026-10-15"
 slug: "gadgets-lifestyle-artifacts"
 image: "https://images.unsplash.com/photo-1615655406736-b37c4fabf923?crop=entropy&cs=tinysrgb&w=1800&q=82"
 imageAlt: "An over-ear pair of headphones resting on a marble surface beside a small stack of art books"
-categories: ["Electronics & Consumer Tech"]
+categories: ["Tech"]
 categorySlugs: ["tech"]
 excerpt: "On the quiet emotional life of the objects we live with — and what our attachment to them actually means."
 author: "Editorial"

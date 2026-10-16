@@ -4,7 +4,7 @@ date: 2026-10-15
 slug: "silhouette-as-language"
 image: "https://images.unsplash.com/photo-1603189343302-e603f7add05a?crop=entropy&cs=tinysrgb&w=1800&q=82"
 imageAlt: "A woman in a sweeping long coat walking across an open stone plaza at dusk"
-categories: ["Fashion & Apparel"]
+categories: ["Fashion"]
 categorySlugs: ["fashion"]
 excerpt: "Before color, before print, before the small politics of fabric — there is the shape we choose to inhabit."
 author: "Editorial"

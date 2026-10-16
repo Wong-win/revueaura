@@ -4,7 +4,7 @@ date: 2026-10-15
 slug: "hair-as-identity"
 image: "https://images.unsplash.com/photo-1506863530036-1efeddceb993?crop=entropy&cs=tinysrgb&w=1800&q=82"
 imageAlt: "A woman in soft daylight with wind lifting the edges of her dark, shoulder-length hair, her gaze turned toward a window"
-categories: ["Beauty & Personal Care"]
+categories: ["Beauty"]
 categorySlugs: ["beauty"]
 excerpt: "The most legible part of us. The portrait we did not sit for. The small daily choosing of who, today, we are going to be."
 author: "Editorial"

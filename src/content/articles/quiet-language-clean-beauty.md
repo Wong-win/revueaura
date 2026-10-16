@@ -4,7 +4,7 @@ date: 2026-10-15
 slug: "quiet-language-clean-beauty"
 image: "https://images.unsplash.com/photo-1623248509634-35f464d994da?crop=entropy&cs=tinysrgb&w=1800&q=82"
 imageAlt: "A row of pale, apothecary-style bottles in soft amber and cream, arranged against a neutral linen backdrop"
-categories: ["Beauty & Personal Care"]
+categories: ["Beauty"]
 categorySlugs: ["beauty"]
 excerpt: "The cleanest product in the world is the one you finish, the one you love, the one you did not buy twice because the first sat half-used on a shelf."
 author: "Editorial"

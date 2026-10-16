@@ -4,7 +4,7 @@ date: 2026-10-15
 slug: "slow-fashion-mind"
 image: "https://images.unsplash.com/photo-1645550294607-c9955e906ba2?crop=entropy&cs=tinysrgb&w=1800&q=82"
 imageAlt: "A close-up of a weathered wooden tailor's table with folded fabric and a pair of brass scissors"
-categories: ["Fashion & Apparel"]
+categories: ["Fashion"]
 categorySlugs: ["fashion"]
 excerpt: "To dress slowly is to refuse the calendar of wanting — and to step back into the long, quiet rhythm of cloth."
 author: "Editorial"

@@ -4,7 +4,7 @@ date: 2026-10-15
 slug: "quiet-power-capsule-wardrobe"
 image: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?crop=entropy&cs=tinysrgb&w=1800&q=82"
 imageAlt: "A neatly folded stack of neutral-toned shirts on a wooden shelf"
-categories: ["Fashion & Apparel"]
+categories: ["Fashion"]
 categorySlugs: ["fashion"]
 excerpt: "Fewer pieces, worn with intention — a meditation on the wardrobe that asks less of you."
 author: "Editorial"

@@ -4,7 +4,7 @@ date: "2026-10-15"
 slug: "quiet-use-of-screens"
 image: "https://images.unsplash.com/photo-1781966995939-3748dc1f1742?crop=entropy&cs=tinysrgb&w=1800&q=82"
 imageAlt: "A dimly lit bedroom scene with warm lamplight falling across a turned-off phone on a nightstand"
-categories: ["Electronics & Consumer Tech"]
+categories: ["Tech"]
 categorySlugs: ["tech"]
 excerpt: "On screen time as a question of quality, not minutes — and the soft, deliberate art of putting a device down."
 author: "Editorial"

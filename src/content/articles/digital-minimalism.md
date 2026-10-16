@@ -4,7 +4,7 @@ date: "2026-10-15"
 slug: "digital-minimalism"
 image: "https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?crop=entropy&cs=tinysrgb&w=1800&q=82"
 imageAlt: "A wooden desk surface with a closed notebook, a ceramic cup, and a single small plant"
-categories: ["Electronics & Consumer Tech"]
+categories: ["Tech"]
 categorySlugs: ["tech"]
 excerpt: "On the quiet practice of removing what no longer serves you, and the strange grace of a phone that does less."
 author: "Editorial"

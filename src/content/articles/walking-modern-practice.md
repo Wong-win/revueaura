@@ -4,7 +4,7 @@ date: 2026-10-15
 slug: "walking-modern-practice"
 image: "https://images.unsplash.com/photo-1773766779540-11a1852ce6e3?crop=entropy&cs=tinysrgb&w=1800&q=82"
 imageAlt: "A solitary figure walking down a misty morning street, soft golden light"
-categories: ["Sports, Outdoors & Fitness"]
+categories: ["Outdoors"]
 categorySlugs: ["outdoor"]
 excerpt: "Walking is the only practice left that asks nothing of us but our presence."
 author: "Editorial"

@@ -4,7 +4,7 @@ date: 2026-10-16
 slug: "wood-patina"
 image: "https://images.unsplash.com/photo-1724918097846-9261636b066b?crop=entropy&cs=tinysrgb&w=1800&q=82"
 imageAlt: "A close-up of an aged wooden surface showing grain and wear"
-categories: ["Home"]
+categories: ["Living"]
 categorySlugs: ["home"]
 excerpt: "A wooden table that has been used, spilled on, sanded, and used again is a record of every meal it has held."
 author: "Editorial"

@@ -4,7 +4,7 @@ date: 2026-10-17
 slug: "window-frame-outside"
 image: "https://images.pexels.com/photos/30603512/pexels-photo-30603512.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940&w=1800"
 imageAlt: "A large window with soft daylight pouring through"
-categories: ["Home"]
+categories: ["Living"]
 categorySlugs: ["home"]
 excerpt: "A room with a real window is never the same room in winter and summer — it is the cheapest artwork in the house."
 author: "Editorial"

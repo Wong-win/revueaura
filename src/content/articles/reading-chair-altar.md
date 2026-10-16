@@ -4,7 +4,7 @@ date: 2026-10-16
 slug: "reading-chair-altar"
 image: "https://images.unsplash.com/photo-1567912992050-a1c88e0065ae?crop=entropy&cs=tinysrgb&w=1800&q=82"
 imageAlt: "A worn leather armchair beside a window with afternoon light"
-categories: ["Home"]
+categories: ["Living"]
 categorySlugs: ["home"]
 excerpt: "One good chair, a single lamp, a stack of unread books — a small sanctuary that organizes the rest of the room."
 author: "Editorial"

@@ -4,7 +4,7 @@ date: 2026-10-17
 slug: "rug-quiets-room"
 image: "https://images.pexels.com/photos/7417505/pexels-photo-7417505.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940&w=1800"
 imageAlt: "A wool rug in a quiet living room"
-categories: ["Home"]
+categories: ["Living"]
 categorySlugs: ["home"]
 excerpt: "A rug is the first thing that absorbs the sound of a space — the difference between a room and a hall is mostly underfoot."
 author: "Editorial"

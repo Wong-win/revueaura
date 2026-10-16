@@ -23,7 +23,7 @@ export const collections = { articles };
 export const CATEGORIES = {
   fashion: 'Fashion',
   beauty: 'Beauty',
-  home: 'Home',
+  home: 'Living',
   tech: 'Tech',
   outdoor: 'Outdoors',
 } as const;

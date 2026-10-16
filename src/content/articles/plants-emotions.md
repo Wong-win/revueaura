@@ -4,7 +4,7 @@ date: 2026-10-15
 slug: "plants-emotions"
 image: "https://images.unsplash.com/photo-1604762524889-3e2fcc145683?crop=entropy&cs=tinysrgb&w=1800&q=82"
 imageAlt: "A bright room with several large leafy plants gathered near a window"
-categories: ["Home"]
+categories: ["Living"]
 categorySlugs: ["home"]
 excerpt: "A plant is a roommate who does not require conversation but quietly insists that you keep showing up."
 author: "Editorial"

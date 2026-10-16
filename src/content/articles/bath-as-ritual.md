@@ -4,7 +4,7 @@ date: 2026-10-16
 slug: "bath-as-ritual"
 image: "https://images.unsplash.com/photo-1787754651985-2a6afffc3b9d?crop=entropy&cs=tinysrgb&w=1800&q=82"
 imageAlt: "A minimalist bathtub with a candle and a folded towel beside it"
-categories: ["Home"]
+categories: ["Living"]
 categorySlugs: ["home"]
 excerpt: "The bath is the only room in the house designed to hold a single person doing nothing at all."
 author: "Editorial"

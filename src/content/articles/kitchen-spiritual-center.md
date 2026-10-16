@@ -4,7 +4,7 @@ date: 2026-10-15
 slug: "kitchen-spiritual-center"
 image: "https://images.unsplash.com/photo-1773098587028-370ff3c207d0?crop=entropy&cs=tinysrgb&w=1800&q=82"
 imageAlt: "A rustic kitchen with copper pots, a wooden table, and bread cooling on a board"
-categories: ["Home"]
+categories: ["Living"]
 categorySlugs: ["home"]
 excerpt: "The kitchen remembers everything: who came, who left, who was fed, who was held."
 author: "Editorial"

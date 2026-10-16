@@ -4,7 +4,7 @@ date: 2026-10-16
 slug: "art-at-home"
 image: "https://images.unsplash.com/photo-1746801178993-134040773179?crop=entropy&cs=tinysrgb&w=1800&q=82"
 imageAlt: "A single framed print hanging on a pale plaster wall"
-categories: ["Home"]
+categories: ["Living"]
 categorySlugs: ["home"]
 excerpt: "What to hang on the wall when you live with intention — a single piece, properly lit, says more than a salon wall."
 author: "Editorial"

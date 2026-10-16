@@ -4,7 +4,7 @@ date: 2026-10-15
 slug: "light-rhythm"
 image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?crop=entropy&cs=tinysrgb&w=1800&q=82"
 imageAlt: "Morning sunlight pouring through tall windows onto a wooden floor"
-categories: ["Home"]
+categories: ["Living"]
 categorySlugs: ["home"]
 excerpt: "Before we ever arrange a room, the light has already written the first draft of the day inside it."
 author: "Editorial"

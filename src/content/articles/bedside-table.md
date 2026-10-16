@@ -4,7 +4,7 @@ date: 2026-10-16
 slug: "bedside-table"
 image: "https://images.unsplash.com/photo-1658595149174-ff76486ec800?crop=entropy&cs=tinysrgb&w=1800&q=82"
 imageAlt: "A bedside table with a small lamp, a book, and a ceramic cup"
-categories: ["Home"]
+categories: ["Living"]
 categorySlugs: ["home"]
 excerpt: "A small surface with outsized meaning — the last thing you see at night, the first thing you reach for in the morning."
 author: "Editorial"

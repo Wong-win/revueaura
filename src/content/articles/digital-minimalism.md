@@ -1,5 +1,5 @@
 ---
-title: "Digital Minimalism and Intentional Tech"
+title: "Digital Minimalism and Intentional Tech, and the Apps You Actually Need on the Home Screen"
 date: "2026-10-15"
 slug: "digital-minimalism"
 image: "https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?crop=entropy&cs=tinysrgb&w=1800&q=82"

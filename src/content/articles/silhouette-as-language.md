@@ -1,5 +1,5 @@
 ---
-title: "Silhouette as Language"
+title: "Silhouette as Language, and the Way a Cut Speaks Before You Do"
 date: 2026-10-15
 slug: "silhouette-as-language"
 image: "https://images.unsplash.com/photo-1603189343302-e603f7add05a?crop=entropy&cs=tinysrgb&w=1800&q=82"

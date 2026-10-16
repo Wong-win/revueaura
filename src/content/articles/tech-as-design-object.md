@@ -1,5 +1,5 @@
 ---
-title: "Technology as a Design Object"
+title: "Technology as a Design Object, and the Quiet Joy of a Well-Made Tool on the Desk"
 date: "2026-10-15"
 slug: "tech-as-design-object"
 image: "https://images.unsplash.com/photo-1476357471311-43c0db9fb2b4?crop=entropy&cs=tinysrgb&w=1800&q=82"

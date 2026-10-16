@@ -1,5 +1,5 @@
 ---
-title: "Gadgets as Lifestyle Artifacts"
+title: "Gadgets as Lifestyle Artifacts, and the Tools That Earn Their Place on the Desk"
 date: "2026-10-15"
 slug: "gadgets-lifestyle-artifacts"
 image: "https://images.unsplash.com/photo-1615655406736-b37c4fabf923?crop=entropy&cs=tinysrgb&w=1800&q=82"

@@ -1,5 +1,5 @@
 ---
-title: "The Weekend Trail"
+title: "The Weekend Trail, and the Slow Accumulation of Knowing a Single Forest Path"
 date: 2026-10-16
 slug: "weekend-trail"
 image: "https://images.unsplash.com/photo-1788358799155-6940ac24a9bb?crop=entropy&cs=tinysrgb&w=1800&q=82"

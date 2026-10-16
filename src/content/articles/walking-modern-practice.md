@@ -1,5 +1,5 @@
 ---
-title: "Walking as a Modern Practice"
+title: "Walking as a Modern Practice, and the Slow Return of Going Nowhere in Particular"
 date: 2026-10-15
 slug: "walking-modern-practice"
 image: "https://images.unsplash.com/photo-1773766779540-11a1852ce6e3?crop=entropy&cs=tinysrgb&w=1800&q=82"

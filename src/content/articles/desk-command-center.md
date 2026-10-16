@@ -1,5 +1,5 @@
 ---
-title: "The Desk as a Quiet Command Center"
+title: "The Desk as a Quiet Command Center, and How a Clear Surface Starts Thinking Ahead of You"
 date: 2026-10-16
 slug: "desk-command-center"
 image: "https://images.unsplash.com/photo-1621348016212-535c972093db?crop=entropy&cs=tinysrgb&w=1800&q=82"

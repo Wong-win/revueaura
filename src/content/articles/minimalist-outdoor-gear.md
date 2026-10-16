@@ -1,5 +1,5 @@
 ---
-title: "The Minimalist Philosophy of Outdoor Gear"
+title: "The Minimalist Philosophy of Outdoor Gear, and the Case for Bringing Less and Noticing More"
 date: 2026-10-15
 slug: "minimalist-outdoor-gear"
 image: "https://images.unsplash.com/photo-1762549957454-d5551dfe2f44?crop=entropy&cs=tinysrgb&w=1800&q=82"

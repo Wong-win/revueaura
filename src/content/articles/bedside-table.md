@@ -1,5 +1,5 @@
 ---
-title: "The Bedside Table"
+title: "The Bedside Table, and the Outsize Meaning of the Last Surface You See at Night"
 date: 2026-10-16
 slug: "bedside-table"
 image: "https://images.unsplash.com/photo-1658595149174-ff76486ec800?crop=entropy&cs=tinysrgb&w=1800&q=82"

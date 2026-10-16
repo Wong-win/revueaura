@@ -1,5 +1,5 @@
 ---
-title: "The Return of the Slip Dress"
+title: "The Return of the Slip Dress, and the Case for Soft Tailoring in a Hard Year"
 date: 2026-10-16
 slug: "slip-dress-return"
 image: "https://images.unsplash.com/photo-1618991793201-50f4c1fd003a?crop=entropy&cs=tinysrgb&w=1800&q=82"

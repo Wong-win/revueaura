@@ -1,5 +1,5 @@
 ---
-title: "Fragrance and the Architecture of Memory"
+title: "Fragrance and the Quiet Architecture of Memory, and the Scent That Outlives a Moment"
 date: 2026-10-15
 slug: "fragrance-architecture-memory"
 image: "https://images.unsplash.com/photo-1615634260167-c8cdede054de?crop=entropy&cs=tinysrgb&w=1800&q=82"

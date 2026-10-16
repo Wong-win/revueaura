@@ -1,5 +1,5 @@
 ---
-title: "The Everyday Signature"
+title: "The Everyday Signature, and the Case for Wearing One Scent Until It Becomes Your Name"
 date: 2026-10-16
 slug: "everyday-signature"
 image: "https://images.unsplash.com/photo-1759793499819-bf60128a54b4?crop=entropy&cs=tinysrgb&w=1800&q=82"

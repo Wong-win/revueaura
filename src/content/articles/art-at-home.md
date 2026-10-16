@@ -1,5 +1,5 @@
 ---
-title: "Art at Home"
+title: "Art at Home, and the Case for Hanging One Piece, Properly Lit, Instead of a Salon Wall"
 date: 2026-10-16
 slug: "art-at-home"
 image: "https://images.unsplash.com/photo-1746801178993-134040773179?crop=entropy&cs=tinysrgb&w=1800&q=82"

@@ -1,5 +1,5 @@
 ---
-title: "The City Walk as Practice"
+title: "The City Walk as Practice, and the Slow Art of Seeing a Street You Have Already Walked"
 date: 2026-10-16
 slug: "city-walk-practice"
 image: "https://images.unsplash.com/photo-1754648910079-cc00837e15d3?crop=entropy&cs=tinysrgb&w=1800&q=82"

@@ -1,5 +1,5 @@
 ---
-title: "Cycling as a Way of Seeing a City"
+title: "Cycling as a Way of Seeing a City, and the Streets You Only Notice at Twelve Miles an Hour"
 date: 2026-10-15
 slug: "cycling-seeing-city"
 image: "https://images.unsplash.com/photo-1602727751184-d7b7d0cd9d8d?crop=entropy&cs=tinysrgb&w=1800&q=82"

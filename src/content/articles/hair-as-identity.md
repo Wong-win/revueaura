@@ -1,5 +1,5 @@
 ---
-title: "Hair as Identity"
+title: "Hair as Identity, and the Style You Keep Through Every Reinvention"
 date: 2026-10-15
 slug: "hair-as-identity"
 image: "https://images.unsplash.com/photo-1506863530036-1efeddceb993?crop=entropy&cs=tinysrgb&w=1800&q=82"

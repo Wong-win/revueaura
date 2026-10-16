@@ -1,5 +1,5 @@
 ---
-title: "Lips as Language"
+title: "Lips as Language, and the Small Sentences a Tinted Lip Says Better Than a Full Face"
 date: 2026-10-16
 slug: "lips-as-language"
 image: "https://images.unsplash.com/photo-1601548667635-a5c7f92a897a?crop=entropy&cs=tinysrgb&w=1800&q=82"

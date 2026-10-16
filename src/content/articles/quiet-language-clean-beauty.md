@@ -1,5 +1,5 @@
 ---
-title: "The Quiet Language of Clean Beauty"
+title: "The Quiet Language of Clean Beauty, and the Ingredients That Actually Earn Their Place"
 date: 2026-10-15
 slug: "quiet-language-clean-beauty"
 image: "https://images.unsplash.com/photo-1623248509634-35f464d994da?crop=entropy&cs=tinysrgb&w=1800&q=82"

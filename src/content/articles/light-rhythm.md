@@ -1,5 +1,5 @@
 ---
-title: "Light, and the Rhythm It Sets"
+title: "Light, and the Rhythm It Sets in Every Room of the House"
 date: 2026-10-15
 slug: "light-rhythm"
 image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?crop=entropy&cs=tinysrgb&w=1800&q=82"

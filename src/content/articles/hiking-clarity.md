@@ -1,5 +1,5 @@
 ---
-title: "Hiking and the Clarity It Brings"
+title: "Hiking and the Clarity It Brings, and the Long Quiet That Settles In Above the Tree Line"
 date: 2026-10-15
 slug: "hiking-clarity"
 image: "https://images.unsplash.com/photo-1551632811-561732d1e306?crop=entropy&cs=tinysrgb&w=1800&q=82"

@@ -1,5 +1,5 @@
 ---
-title: "Plants and the Emotions They Bring to a Space"
+title: "Plants and the Emotions They Bring to a Space, and the Quiet Company of Something Green"
 date: 2026-10-15
 slug: "plants-emotions"
 image: "https://images.unsplash.com/photo-1604762524889-3e2fcc145683?crop=entropy&cs=tinysrgb&w=1800&q=82"

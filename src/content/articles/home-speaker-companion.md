@@ -1,5 +1,5 @@
 ---
-title: "The Home Speaker as Companion"
+title: "The Home Speaker as Companion, and the Case for a Single Speaker Playing One Album on Repeat"
 date: 2026-10-16
 slug: "home-speaker-companion"
 image: "https://images.unsplash.com/photo-1585246135063-c361ccd416b6?crop=entropy&cs=tinysrgb&w=1800&q=82"

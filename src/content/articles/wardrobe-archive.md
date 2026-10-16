@@ -1,5 +1,5 @@
 ---
-title: "The Wardrobe as an Archive"
+title: "The Wardrobe as an Archive, and the Quiet Art of Keeping What You Have Already Lived In"
 date: 2026-10-16
 slug: "wardrobe-archive"
 image: "https://images.unsplash.com/photo-1612423284934-2850a4ea6b0f?crop=entropy&cs=tinysrgb&w=1800&q=82"

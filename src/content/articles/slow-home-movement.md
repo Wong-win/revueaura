@@ -1,5 +1,5 @@
 ---
-title: "The Slow Home Movement"
+title: "The Slow Home Movement, and the Case for Living With Fewer, Better Things"
 date: 2026-10-15
 slug: "slow-home-movement"
 image: "https://images.unsplash.com/photo-1784028260705-34d9b65a95b2?crop=entropy&cs=tinysrgb&w=1800&q=82"

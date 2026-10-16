@@ -1,5 +1,5 @@
 ---
-title: "Color Palettes and Personal Aura"
+title: "Color Palettes and Personal Aura, and the Mood You Carry Before You Speak"
 date: 2026-10-15
 slug: "color-palettes-personal-aura"
 image: "https://images.unsplash.com/photo-1614851099175-e5b30eb6f696?crop=entropy&cs=tinysrgb&w=1800&q=82"

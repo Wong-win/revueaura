@@ -1,5 +1,5 @@
 ---
-title: "Makeup as Self-Expression"
+title: "Makeup as Self-Expression, and the Face You Put On Like a Sentence"
 date: 2026-10-15
 slug: "makeup-self-expression"
 image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?crop=entropy&cs=tinysrgb&w=1800&q=82"

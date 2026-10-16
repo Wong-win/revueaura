@@ -1,5 +1,5 @@
 ---
-title: "SPF as a Daily Anchor"
+title: "SPF as a Daily Anchor, and the Quiet Reordering of a Modern Skincare Routine"
 date: 2026-10-16
 slug: "spf-daily-anchor"
 image: "https://images.unsplash.com/photo-1614859384883-7db3dc2c079d?crop=entropy&cs=tinysrgb&w=1800&q=82"

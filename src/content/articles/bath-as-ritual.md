@@ -1,5 +1,5 @@
 ---
-title: "Bath as Ritual"
+title: "Bath as Ritual, and the Only Room in the House Designed to Hold a Person Doing Nothing at All"
 date: 2026-10-16
 slug: "bath-as-ritual"
 image: "https://images.unsplash.com/photo-1787754651985-2a6afffc3b9d?crop=entropy&cs=tinysrgb&w=1800&q=82"

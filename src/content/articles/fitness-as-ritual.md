@@ -1,5 +1,5 @@
 ---
-title: "Fitness as Ritual, Not Performance"
+title: "Fitness as Ritual, Not Performance, and the Body as a Daily Practice Rather Than a Project"
 date: 2026-10-15
 slug: "fitness-as-ritual"
 image: "https://images.unsplash.com/photo-1518611012118-696072aa579a?crop=entropy&cs=tinysrgb&w=1800&q=82"

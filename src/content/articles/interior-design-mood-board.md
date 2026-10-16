@@ -1,5 +1,5 @@
 ---
-title: "Interior Design as a Mood Board for Life"
+title: "Interior Design as a Mood Board for Life, and the Room That Sets the Tone for the Day"
 date: 2026-10-15
 slug: "interior-design-mood-board"
 image: "https://images.unsplash.com/photo-1614184860170-0cab79760a7b?crop=entropy&cs=tinysrgb&w=1800&q=82"

@@ -1,5 +1,5 @@
 ---
-title: "Photography as a Memory Technology"
+title: "Photography as a Memory Technology, and the Most-Used Diary in Human History"
 date: 2026-10-16
 slug: "photography-as-memory"
 image: "https://images.unsplash.com/photo-1600645739478-abf50f79d6b1?crop=entropy&cs=tinysrgb&w=1800&q=82"

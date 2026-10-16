@@ -1,5 +1,5 @@
 ---
-title: "The Morning Skincare Ritual"
+title: "The Morning Skincare Ritual, and the Small Ceremony Before the Day Begins"
 date: 2026-10-15
 slug: "morning-skincare-ritual"
 image: "https://images.unsplash.com/photo-1586220742613-b731f66f7743?crop=entropy&cs=tinysrgb&w=1800&q=82"

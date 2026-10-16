@@ -1,5 +1,5 @@
 ---
-title: "Quiet Luxury, Decoded"
+title: "Quiet Luxury, Decoded, and What Understated Wealth Actually Looks Like Now"
 date: 2026-10-16
 slug: "quiet-luxury-decoded"
 image: "https://images.unsplash.com/photo-1556914249-863ba0ec162d?crop=entropy&cs=tinysrgb&w=1800&q=82"

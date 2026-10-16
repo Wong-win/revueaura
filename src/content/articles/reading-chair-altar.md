@@ -1,5 +1,5 @@
 ---
-title: "The Reading Chair as Altar"
+title: "The Reading Chair as Altar, and the One Piece of Furniture That Organizes the Rest of the Room"
 date: 2026-10-16
 slug: "reading-chair-altar"
 image: "https://images.unsplash.com/photo-1567912992050-a1c88e0065ae?crop=entropy&cs=tinysrgb&w=1800&q=82"

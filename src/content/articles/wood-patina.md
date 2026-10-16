@@ -1,5 +1,5 @@
 ---
-title: "Wood, and the Patina It Carries"
+title: "Wood, and the Patina It Carries, and the Small Beauty of a Surface That Has Actually Been Used"
 date: 2026-10-16
 slug: "wood-patina"
 image: "https://images.unsplash.com/photo-1724918097846-9261636b066b?crop=entropy&cs=tinysrgb&w=1800&q=82"

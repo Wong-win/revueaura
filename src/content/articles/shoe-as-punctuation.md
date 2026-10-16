@@ -1,5 +1,5 @@
 ---
-title: "The Shoe as Punctuation"
+title: "The Shoe as Punctuation, and the Small Decision That Says the Most at the End of an Outfit"
 date: 2026-10-16
 slug: "shoe-as-punctuation"
 image: "https://images.unsplash.com/photo-1694990232666-31916ed17e4d?crop=entropy&cs=tinysrgb&w=1800&q=82"

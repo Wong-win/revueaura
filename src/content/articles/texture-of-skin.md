@@ -1,5 +1,5 @@
 ---
-title: "The Texture of Skin"
+title: "The Texture of Skin, and the Slow Beauty Conversation That Is Leaving the Filter Behind"
 date: 2026-10-16
 slug: "texture-of-skin"
 image: "https://images.unsplash.com/photo-1776276344800-f01d266a8b21?crop=entropy&cs=tinysrgb&w=1800&q=82"

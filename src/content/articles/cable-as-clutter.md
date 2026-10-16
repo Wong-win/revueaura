@@ -1,5 +1,5 @@
 ---
-title: "The Cable as Clutter"
+title: "The Cable as Clutter, and the Difference Between a Room and a Workspace"
 date: 2026-10-16
 slug: "cable-as-clutter"
 image: "https://images.unsplash.com/photo-1698047575401-c51c09e6e9ab?crop=entropy&cs=tinysrgb&w=1800&q=82"

@@ -1,5 +1,5 @@
 ---
-title: "The Quiet Power of a Capsule Wardrobe"
+title: "The Quiet Power of a Capsule Wardrobe, and Why It Still Matters"
 date: 2026-10-15
 slug: "quiet-power-capsule-wardrobe"
 image: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?crop=entropy&cs=tinysrgb&w=1800&q=82"

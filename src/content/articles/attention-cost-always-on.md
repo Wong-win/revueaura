@@ -1,5 +1,5 @@
 ---
-title: "Attention, and the Cost of Always-On"
+title: "Attention, and the Cost of Always-On, and the Case for Letting the Phone Go Dark"
 date: "2026-10-15"
 slug: "attention-cost-always-on"
 image: "https://images.unsplash.com/photo-1531323386183-43890b5c766d?crop=entropy&cs=tinysrgb&w=1800&q=82"

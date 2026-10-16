@@ -1,5 +1,5 @@
 ---
-title: "Cold Water, and What It Does for the Body"
+title: "Cold Water, and What It Does for the Body, and the Modern Argument for Deliberate Discomfort"
 date: 2026-10-16
 slug: "cold-water-body"
 image: "https://images.unsplash.com/photo-1770556697860-a5368c635927?crop=entropy&cs=tinysrgb&w=1800&q=82"

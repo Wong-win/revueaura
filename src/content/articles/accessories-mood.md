@@ -1,5 +1,5 @@
 ---
-title: "Accessories and the Mood They Carry"
+title: "Accessories and the Mood They Carry, and the Small Objects That Finish a Sentence"
 date: 2026-10-15
 slug: "accessories-mood"
 image: "https://images.unsplash.com/photo-1443884590026-2e4d21aee71c?crop=entropy&cs=tinysrgb&w=1800&q=82"

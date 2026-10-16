@@ -1,5 +1,5 @@
 ---
-title: "The Slow Fashion Mind"
+title: "The Slow Fashion Mind, and the Case for Wearing What You Already Own"
 date: 2026-10-15
 slug: "slow-fashion-mind"
 image: "https://images.unsplash.com/photo-1645550294607-c9955e906ba2?crop=entropy&cs=tinysrgb&w=1800&q=82"

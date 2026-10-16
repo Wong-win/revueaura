@@ -1,5 +1,5 @@
 ---
-title: "The Quiet Use of Screens"
+title: "The Quiet Use of Screens, and the Difference Between Looking and Actually Seeing"
 date: "2026-10-15"
 slug: "quiet-use-of-screens"
 image: "https://images.unsplash.com/photo-1781966995939-3748dc1f1742?crop=entropy&cs=tinysrgb&w=1800&q=82"

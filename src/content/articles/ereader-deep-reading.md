@@ -1,5 +1,5 @@
 ---
-title: "E-Readers and the Return of Deep Reading"
+title: "E-Readers and the Return of Deep Reading, and the Quiet Device That Does Exactly One Thing"
 date: 2026-10-16
 slug: "ereader-deep-reading"
 image: "https://images.unsplash.com/photo-1642502093489-052743b5f394?crop=entropy&cs=tinysrgb&w=1800&q=82"

@@ -1,5 +1,5 @@
 ---
-title: "The Kitchen as the Spiritual Center of a Home"
+title: "The Kitchen as the Spiritual Center of a Home, and the Room Where Everyone Ends Up"
 date: 2026-10-15
 slug: "kitchen-spiritual-center"
 image: "https://images.unsplash.com/photo-1773098587028-370ff3c207d0?crop=entropy&cs=tinysrgb&w=1800&q=82"

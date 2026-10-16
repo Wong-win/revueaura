@@ -1,5 +1,5 @@
 ---
-title: "The Morning Run as Meditation"
+title: "The Morning Run as Meditation, and the Same Quiet Route Before the City Wakes Up"
 date: 2026-10-16
 slug: "morning-run-meditation"
 image: "https://images.unsplash.com/photo-1775919422014-b5bb2ab4d15d?crop=entropy&cs=tinysrgb&w=1800&q=82"

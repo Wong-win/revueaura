@@ -1,5 +1,5 @@
 ---
-title: "The Evening Skincare Ritual"
+title: "The Evening Skincare Ritual, and the Quiet Ceremony of Washing the Day Off Your Face"
 date: 2026-10-16
 slug: "evening-skincare-ritual"
 image: "https://images.unsplash.com/photo-1584910560360-1b941f49107e?crop=entropy&cs=tinysrgb&w=1800&q=82"

@@ -1,5 +1,5 @@
 ---
-title: "Linen, and the Way It Ages"
+title: "Linen, and the Way It Softens with Every Summer and Every Wash"
 date: 2026-10-16
 slug: "linen-ages"
 image: "https://images.unsplash.com/photo-1691053318576-4bf08315e877?crop=entropy&cs=tinysrgb&w=1800&q=82"

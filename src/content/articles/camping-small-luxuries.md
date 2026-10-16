@@ -1,5 +1,5 @@
 ---
-title: "Camping and the Small Luxuries"
+title: "Camping and the Small Luxuries, and What to Bring When Simplicity Is the Point"
 date: 2026-10-16
 slug: "camping-small-luxuries"
 image: "https://images.unsplash.com/photo-1500581276021-a4bbcd0050c5?crop=entropy&cs=tinysrgb&w=1800&q=82"

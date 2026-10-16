@@ -8,6 +8,7 @@ categories: ["Fashion"]
 categorySlugs: ["fashion"]
 excerpt: "Fewer pieces, worn with intention — a meditation on the wardrobe that asks less of you."
 author: "Editorial"
+pinned: true
 ---
 
 The first morning you open a wardrobe that has been quietly edited down to its bones, something happens that nobody warns you about. The room is the same. The light through the curtain is the same. You are the same. But the air inside the closet feels different — it feels like a held breath that has finally been released. There is no negotiation. There is no rummage. There is only the soft hush of fabric folded against itself, and you, standing at the threshold, ready to choose.

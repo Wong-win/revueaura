@@ -12,14 +12,9 @@ const articles = (await getCollection('articles')).sort((a, b) => {
   return new Date(b.data.date).getTime() - new Date(a.data.date).getTime();
 });
 
-// Pinned = featured (or first article if none pinned)
 const featured = articles.find(a => a.data.pinned) ?? articles[0];
-
-// Newswire: top 8 (may include featured)
 const newswire = articles.slice(0, 8);
-
-// Latest feed: everything except featured, capped at 16
-const latest = articles.filter(a => a.data.slug !== featured.data.slug).slice(0, 16);
+const latest = articles.filter(a => a.data.slug !== featured.data.slug).slice(0, 12);
 
 function fmtRelative(iso: string | Date) {
   const d = new Date(iso);
@@ -43,17 +38,17 @@ function authorInitial(name?: string) {
 
   <main class="container">
 
-    <!-- FEATURED — full-bleed large card -->
+    <!-- FEATURED — full-width with overlay -->
     <section class="featured" aria-label="Featured story">
       <a href={`/${featured.data.slug}/`} class="featured-img">
         <img src={featured.data.image} alt={featured.data.imageAlt ?? featured.data.title} loading="eager" />
+        <div class="overlay"></div>
       </a>
       <div class="featured-body">
         <a href={`/category/${featured.data.categorySlugs[0]}/`}>
           <span class={`tag tag-${featured.data.categorySlugs[0]}`}>{featured.data.categories[0]}</span>
         </a>
         <a href={`/${featured.data.slug}/`}><h1>{featured.data.title}</h1></a>
-        {featured.data.excerpt && <p class="lede">{featured.data.excerpt}</p>}
         <div class="byline">
           <span class="avatar">{authorInitial(featured.data.author)}</span>
           <span class="byline-name">{featured.data.author ?? 'Editorial'}</span>
@@ -63,44 +58,40 @@ function authorInitial(name?: string) {
       </div>
     </section>
 
-    <!-- TWO-COLUMN ROW: main feed | newswire sidebar -->
+    <!-- TWO-COLUMN ROW: latest feed | newswire sidebar -->
     <div class="row-2col">
 
-      <!-- Main feed -->
       <div class="feed-col">
         <div class="section-head">
-          <span class="dash"></span>
-          <h2>Latest Stories</h2>
+          <h2>Latest stories</h2>
+          <a href="#newswire" class="see-all">See everything →</a>
         </div>
 
-        <ul class="feed-list">
+        <div class="grid-2">
           {latest.map(a => (
-            <li class="feed-item">
-              <a href={`/${a.data.slug}/`} class="feed-img">
+            <article class="card">
+              <a href={`/${a.data.slug}/`} class="card-img">
                 <img src={a.data.image} alt={a.data.imageAlt ?? a.data.title} loading="lazy" />
               </a>
-              <div class="feed-body">
-                <a href={`/category/${a.data.categorySlugs[0]}/`}>
-                  <span class={`tag tag-${a.data.categorySlugs[0]}`}>{a.data.categories[0]}</span>
-                </a>
-                <a href={`/${a.data.slug}/`}><h3>{a.data.title}</h3></a>
-                <div class="byline byline-sm">
-                  <span class="avatar avatar-sm">{authorInitial(a.data.author)}</span>
-                  <span class="byline-name">{a.data.author ?? 'Editorial'}</span>
-                  <span class="byline-dot">·</span>
-                  <span class="byline-time">{fmtRelative(a.data.date)}</span>
-                </div>
+              <a href={`/category/${a.data.categorySlugs[0]}/`}>
+                <span class={`tag tag-${a.data.categorySlugs[0]}`}>{a.data.categories[0]}</span>
+              </a>
+              <a href={`/${a.data.slug}/`}><h3>{a.data.title}</h3></a>
+              <div class="byline">
+                <span class="avatar avatar-sm">{authorInitial(a.data.author)}</span>
+                <span class="byline-name">{a.data.author ?? 'Editorial'}</span>
+                <span class="byline-dot">·</span>
+                <span class="byline-time">{fmtRelative(a.data.date)}</span>
               </div>
-            </li>
+            </article>
           ))}
-        </ul>
+        </div>
       </div>
 
-      <!-- Sidebar -->
       <aside class="sidebar-col">
         <div class="section-head" id="newswire">
-          <span class="dash"></span>
           <h2>Newswire</h2>
+          <a href="/" class="see-all">View all →</a>
         </div>
 
         <ul class="newswire-list">
@@ -108,25 +99,24 @@ function authorInitial(name?: string) {
             <li class="nw-item">
               <span class="nw-time">{fmtRelative(a.data.date)}</span>
               <a href={`/${a.data.slug}/`} class="nw-headline">{a.data.title}</a>
-              <span class={`tag tag-${a.data.categorySlugs[0]} tag-sm`}>{a.data.categories[0]}</span>
             </li>
           ))}
         </ul>
 
         <!-- Pulse widget (appleosophy AAPL analogue) -->
         <div class="pulse">
-          <div class="section-head" style="margin-bottom:10px">
-            <span class="dash"></span>
-            <h2>The Pulse</h2>
+          <div class="pulse-head">
+            <h3>The Pulse</h3>
+            <span class="pulse-sub">Live quote unavailable.</span>
           </div>
           <p class="pulse-blurb">What we're thinking about this week.</p>
           <ul class="pulse-list">
-            {Object.entries(CATEGORIES).slice(0, 3).map(([s, label]) => {
+            {Object.entries(CATEGORIES).slice(0, 4).map(([s, label]) => {
               const recent = articles.find(a => a.data.categorySlugs.includes(s));
               if (!recent) return null;
               return (
                 <li>
-                  <span class="pulse-cat">{label}</span>
+                  <span class={`pulse-tag tag tag-${s}`}>{label}</span>
                   <a href={`/${recent.data.slug}/`} class="pulse-title">{recent.data.title}</a>
                 </li>
               );
@@ -142,58 +132,134 @@ function authorInitial(name?: string) {
 </Layout>
 
 <style>
-  /* Featured — top story, large image + body */
+  /* Featured — full-width image with text overlay */
   .featured {
-    display: grid;
-    grid-template-columns: 1.4fr 1fr;
-    gap: 36px;
-    padding: 28px 0 36px;
-    border-bottom: 1px solid var(--rule);
-    margin-bottom: 40px;
+    position: relative;
+    margin: 28px 0 36px;
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 16 / 7;
+    max-height: 540px;
   }
 
   .featured-img {
     display: block;
-    border-radius: var(--radius);
-    overflow: hidden;
+    width: 100%;
+    height: 100%;
   }
 
   .featured-img img {
     width: 100%;
-    aspect-ratio: 16 / 10;
+    height: 100%;
     object-fit: cover;
   }
 
-  .featured-body { padding: 8px 0; }
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 30%, rgba(0,0,0,0.85) 100%);
+  }
+
+  .featured-body {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 28px 32px;
+    color: white;
+  }
 
   .featured-body h1 {
     font-family: var(--font-body);
     font-weight: 700;
-    font-size: clamp(1.7rem, 3vw, 2.4rem);
-    line-height: 1.18;
+    font-size: clamp(1.7rem, 4vw, 3rem);
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+    margin: 12px 0 14px;
+    color: white;
+    max-width: 800px;
+  }
+
+  .featured-body .byline { color: rgba(255,255,255,0.85); }
+  .featured-body .byline-name { color: white; }
+  .featured-body .byline-dot { color: rgba(255,255,255,0.4); }
+
+  /* Two-column row */
+  .row-2col {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 48px;
+    margin-bottom: 60px;
+  }
+
+  /* Section header */
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin: 0 0 22px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .section-head h2 {
+    font-family: var(--font-body);
+    font-size: 1.5rem;
+    font-weight: 700;
     letter-spacing: -0.018em;
-    margin: 14px 0 14px;
+    margin: 0;
   }
 
-  .featured-body h1:hover { color: var(--accent); }
-
-  .lede {
-    font-size: 1.02rem;
-    line-height: 1.55;
-    color: var(--text-soft);
-    margin-bottom: 18px;
+  .see-all {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 500;
   }
 
-  /* Byline */
+  .see-all:hover { color: var(--accent); }
+
+  /* Cards grid — 2 columns */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 24px;
+  }
+
+  .card { display: flex; flex-direction: column; }
+
+  .card-img {
+    display: block;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 14px;
+  }
+
+  .card-img img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+
+  .card .tag { margin-bottom: 10px; }
+
+  .card h3 {
+    font-family: var(--font-body);
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: 1.28;
+    letter-spacing: -0.012em;
+    margin: 0 0 10px;
+  }
+
+  .card h3:hover { color: var(--accent); }
+
   .byline {
     display: flex;
     align-items: center;
     gap: 8px;
-    font-size: 0.82rem;
+    font-size: 0.78rem;
     color: var(--text-muted);
   }
-
-  .byline-sm { font-size: 0.78rem; }
 
   .avatar {
     display: inline-grid;
@@ -201,7 +267,7 @@ function authorInitial(name?: string) {
     width: 26px;
     height: 26px;
     border-radius: 50%;
-    background: var(--accent);
+    background: linear-gradient(135deg, #ff3b30, #ff9500, #34c759, #007aff);
     color: white;
     font-size: 0.72rem;
     font-weight: 700;
@@ -210,64 +276,8 @@ function authorInitial(name?: string) {
 
   .avatar-sm { width: 22px; height: 22px; font-size: 0.68rem; }
 
-  .byline-name {
-    font-weight: 600;
-    color: var(--text);
-  }
-
+  .byline-name { font-weight: 600; color: var(--text); }
   .byline-dot { color: var(--rule); }
-
-  /* Two-column row */
-  .row-2col {
-    display: grid;
-    grid-template-columns: 1fr 320px;
-    gap: 48px;
-    margin-bottom: 60px;
-  }
-
-  /* Feed column */
-  .feed-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    gap: 32px;
-  }
-
-  .feed-item {
-    display: grid;
-    grid-template-columns: 200px 1fr;
-    gap: 18px;
-    padding-bottom: 32px;
-    border-bottom: 1px solid var(--rule-soft);
-  }
-
-  .feed-item:last-child { border-bottom: none; padding-bottom: 0; }
-
-  .feed-img {
-    display: block;
-    border-radius: var(--radius);
-    overflow: hidden;
-  }
-
-  .feed-img img {
-    width: 100%;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
-  }
-
-  .feed-body { padding: 2px 0; }
-
-  .feed-body h3 {
-    font-family: var(--font-body);
-    font-size: 1.18rem;
-    font-weight: 700;
-    line-height: 1.28;
-    letter-spacing: -0.012em;
-    margin: 10px 0 10px;
-  }
-
-  .feed-body h3:hover { color: var(--accent); }
 
   /* Sidebar */
   .sidebar-col { min-width: 0; }
@@ -280,25 +290,23 @@ function authorInitial(name?: string) {
 
   .nw-item {
     display: grid;
-    grid-template-columns: 78px 1fr;
-    grid-template-rows: auto auto;
-    column-gap: 12px;
-    padding: 10px 0;
-    border-bottom: 1px dashed var(--rule-soft);
+    grid-template-columns: 80px 1fr;
+    column-gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--rule-soft);
   }
 
   .nw-item:last-child { border-bottom: none; }
 
   .nw-time {
-    grid-row: 1 / 3;
-    font-size: 0.74rem;
+    font-size: 0.76rem;
     color: var(--text-muted);
     align-self: start;
-    padding-top: 1px;
+    padding-top: 2px;
   }
 
   .nw-headline {
-    font-size: 0.92rem;
+    font-size: 0.95rem;
     font-weight: 600;
     line-height: 1.3;
     color: var(--text);
@@ -306,24 +314,36 @@ function authorInitial(name?: string) {
 
   .nw-headline:hover { color: var(--accent); }
 
-  .tag-sm {
-    font-size: 0.62rem;
-    padding: 1px 5px;
-    margin-top: 4px;
-    justify-self: start;
-  }
-
   /* Pulse widget */
   .pulse {
-    padding: 18px 16px;
+    padding: 20px;
     background: var(--surface-2);
-    border-radius: var(--radius);
+    border-radius: 8px;
+  }
+
+  .pulse-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 4px;
+  }
+
+  .pulse-head h3 {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .pulse-sub {
+    font-size: 0.7rem;
+    color: var(--text-muted);
   }
 
   .pulse-blurb {
-    font-size: 0.82rem;
+    font-size: 0.85rem;
     color: var(--text-muted);
-    margin: 0 0 12px;
+    margin: 0 0 14px;
   }
 
   .pulse-list {
@@ -333,23 +353,16 @@ function authorInitial(name?: string) {
   }
 
   .pulse-list li {
-    padding: 8px 0;
+    padding: 10px 0;
     border-bottom: 1px solid var(--rule);
   }
 
   .pulse-list li:last-child { border-bottom: none; padding-bottom: 0; }
 
-  .pulse-cat {
-    display: block;
-    font-size: 0.68rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin-bottom: 2px;
-  }
+  .pulse-tag { margin-bottom: 4px; }
 
   .pulse-title {
+    display: block;
     font-size: 0.9rem;
     font-weight: 600;
     line-height: 1.3;
@@ -359,12 +372,12 @@ function authorInitial(name?: string) {
   .pulse-title:hover { color: var(--accent); }
 
   @media (max-width: 920px) {
-    .featured { grid-template-columns: 1fr; }
     .row-2col { grid-template-columns: 1fr; }
   }
 
   @media (max-width: 640px) {
-    .feed-item { grid-template-columns: 120px 1fr; gap: 14px; }
-    .feed-body h3 { font-size: 1.04rem; }
+    .featured { aspect-ratio: 16 / 9; max-height: 400px; }
+    .featured-body { padding: 18px 18px; }
+    .grid-2 { grid-template-columns: 1fr; gap: 22px; }
   }
 </style>

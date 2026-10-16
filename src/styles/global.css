@@ -142,31 +142,32 @@ p { margin: 0 0 1em; }
   color: var(--accent);
 }
 
-/* Section header — small label + colored dash accent (Appleosophy pattern) */
+/* Section header — page-scoped styles override this baseline (large bold sans). */
 .section-head {
   display: flex;
   align-items: baseline;
-  gap: 10px;
-  margin: 0 0 18px;
-}
-
-.section-head .dash {
-  width: 14px;
-  height: 2px;
-  background: #ff3b30;
-  display: inline-block;
-  flex-shrink: 0;
+  justify-content: space-between;
+  margin: 0 0 22px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--rule);
 }
 
 .section-head h2 {
   font-family: var(--font-body);
-  font-size: 0.85rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--text);
+  letter-spacing: -0.018em;
   margin: 0;
+  color: var(--text);
 }
+
+.see-all {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.see-all:hover { color: var(--accent); }
 
 /* Utility */
 .sr-only {

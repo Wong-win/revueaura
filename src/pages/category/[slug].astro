@@ -28,6 +28,9 @@ const articles = allArticles
     return new Date(b.data.date).getTime() - new Date(a.data.date).getTime();
   });
 
+const featured = articles[0];
+const rest = articles.slice(1);
+
 function fmtRelative(iso: string | Date) {
   const d = new Date(iso);
   const now = Date.now();
@@ -35,7 +38,7 @@ function fmtRelative(iso: string | Date) {
   const day = 86400000;
   if (diff < day) return `${Math.floor(diff / 3600000)}h ago`;
   if (diff < 7 * day) return `${Math.floor(diff / day)}d ago`;
-  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+  return d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
 }
 
 function authorInitial(name?: string) {
@@ -47,113 +50,154 @@ function authorInitial(name?: string) {
   <Header />
 
   <main class="container">
-    <header class="cat-header">
+
+    <!-- Category header — simple, like appleosophy -->
+    <header class="cat-head">
       <span class={`tag tag-${slug}`}>{label}</span>
       <h1>{label}</h1>
-      <p class="cat-blurb">Editorial essays, slow reads, and considered notes — from the {label.toLowerCase()} desk.</p>
-      <p class="cat-count">{articles.length} {articles.length === 1 ? 'story' : 'stories'}</p>
+      <p class="cat-blurb">Editorial essays, slow reads, and considered notes from the {label.toLowerCase()} desk.</p>
     </header>
 
-    <ul class="article-list">
-      {articles.map(a => (
-        <li class="article-item">
-          <a href={`/${a.data.slug}/`} class="row-img">
+    <!-- Featured card -->
+    {featured && (
+      <section class="cat-featured">
+        <a href={`/${featured.data.slug}/`} class="cat-feat-img">
+          <img src={featured.data.image} alt={featured.data.imageAlt ?? featured.data.title} loading="eager" />
+          <div class="overlay"></div>
+        </a>
+        <div class="cat-feat-body">
+          <a href={`/${featured.data.slug}/`}><h2>{featured.data.title}</h2></a>
+          <div class="byline">
+            <span class="avatar">{authorInitial(featured.data.author)}</span>
+            <span class="byline-name">{featured.data.author ?? 'Editorial'}</span>
+            <span class="byline-dot">·</span>
+            <span class="byline-time">{fmtRelative(featured.data.date)}</span>
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- 2-col card grid -->
+    <div class="grid-2">
+      {rest.map(a => (
+        <article class="card">
+          <a href={`/${a.data.slug}/`} class="card-img">
             <img src={a.data.image} alt={a.data.imageAlt ?? a.data.title} loading="lazy" />
           </a>
-          <div class="row-body">
-            <a href={`/${a.data.slug}/`}><h2>{a.data.title}</h2></a>
-            {a.data.excerpt && <p class="excerpt">{a.data.excerpt}</p>}
-            <div class="byline">
-              <span class="avatar avatar-sm">{authorInitial(a.data.author)}</span>
-              <span class="byline-name">{a.data.author ?? 'Editorial'}</span>
-              <span class="byline-dot">·</span>
-              <span class="byline-time">{fmtRelative(a.data.date)}</span>
-            </div>
+          <a href={`/category/${a.data.categorySlugs[0]}/`}>
+            <span class={`tag tag-${a.data.categorySlugs[0]}`}>{a.data.categories[0]}</span>
+          </a>
+          <a href={`/${a.data.slug}/`}><h3>{a.data.title}</h3></a>
+          <div class="byline">
+            <span class="avatar avatar-sm">{authorInitial(a.data.author)}</span>
+            <span class="byline-name">{a.data.author ?? 'Editorial'}</span>
+            <span class="byline-dot">·</span>
+            <span class="byline-time">{fmtRelative(a.data.date)}</span>
           </div>
-        </li>
+        </article>
       ))}
-    </ul>
+    </div>
+
   </main>
 
   <Footer />
 </Layout>
 
 <style>
-  .cat-header {
-    padding: 36px 0 28px;
+  .cat-head {
+    padding: 32px 0 24px;
     border-bottom: 1px solid var(--rule);
     margin-bottom: 28px;
   }
 
-  .cat-header h1 {
+  .cat-head h1 {
     font-family: var(--font-body);
     font-weight: 700;
-    font-size: clamp(1.7rem, 3vw, 2.4rem);
-    line-height: 1.18;
-    letter-spacing: -0.018em;
-    margin: 12px 0 10px;
+    font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+    line-height: 1.16;
+    letter-spacing: -0.02em;
+    margin: 12px 0 8px;
   }
 
   .cat-blurb {
     font-size: 0.98rem;
     color: var(--text-soft);
-    margin: 0 0 8px;
-    max-width: 580px;
-  }
-
-  .cat-count {
-    font-size: 0.78rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--text-muted);
     margin: 0;
+    max-width: 600px;
   }
 
-  .article-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  .article-item {
-    display: grid;
-    grid-template-columns: 240px 1fr;
-    gap: 22px;
-    padding: 24px 0;
-    border-bottom: 1px solid var(--rule-soft);
-  }
-
-  .article-item:last-child { border-bottom: none; }
-
-  .row-img {
-    display: block;
-    border-radius: var(--radius);
+  /* Featured card with overlay */
+  .cat-featured {
+    position: relative;
+    margin: 0 0 36px;
+    border-radius: 12px;
     overflow: hidden;
+    aspect-ratio: 16 / 7;
+    max-height: 480px;
   }
 
-  .row-img img {
+  .cat-feat-img { display: block; width: 100%; height: 100%; }
+  .cat-feat-img img { width: 100%; height: 100%; object-fit: cover; }
+  .overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 30%, rgba(0,0,0,0.85) 100%);
+  }
+
+  .cat-feat-body {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    padding: 24px 28px;
+    color: white;
+  }
+
+  .cat-feat-body h2 {
+    font-family: var(--font-body);
+    font-size: clamp(1.4rem, 3vw, 2.2rem);
+    font-weight: 700;
+    line-height: 1.18;
+    letter-spacing: -0.018em;
+    margin: 0 0 12px;
+    color: white;
+  }
+
+  .cat-feat-body .byline { color: rgba(255,255,255,0.85); }
+  .cat-feat-body .byline-name { color: white; }
+  .cat-feat-body .byline-dot { color: rgba(255,255,255,0.4); }
+
+  /* 2-col grid */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 24px;
+  }
+
+  .card { display: flex; flex-direction: column; }
+
+  .card-img {
+    display: block;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 14px;
+  }
+
+  .card-img img {
     width: 100%;
     aspect-ratio: 4 / 3;
     object-fit: cover;
   }
 
-  .row-body h2 {
+  .card .tag { margin-bottom: 10px; }
+
+  .card h3 {
     font-family: var(--font-body);
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     font-weight: 700;
-    line-height: 1.25;
+    line-height: 1.28;
     letter-spacing: -0.012em;
-    margin: 0 0 8px;
+    margin: 0 0 10px;
   }
 
-  .row-body h2:hover { color: var(--accent); }
-
-  .excerpt {
-    font-size: 0.95rem;
-    color: var(--text-soft);
-    margin-bottom: 12px;
-    line-height: 1.55;
-  }
+  .card h3:hover { color: var(--accent); }
 
   .byline {
     display: flex;
@@ -166,20 +210,23 @@ function authorInitial(name?: string) {
   .avatar {
     display: inline-grid;
     place-items: center;
-    width: 22px;
-    height: 22px;
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
-    background: var(--accent);
+    background: linear-gradient(135deg, #ff3b30, #ff9500, #34c759, #007aff);
     color: white;
-    font-size: 0.68rem;
+    font-size: 0.7rem;
     font-weight: 700;
     flex-shrink: 0;
   }
+
+  .avatar-sm { width: 22px; height: 22px; font-size: 0.68rem; }
 
   .byline-name { font-weight: 600; color: var(--text); }
   .byline-dot { color: var(--rule); }
 
   @media (max-width: 720px) {
-    .article-item { grid-template-columns: 130px 1fr; gap: 14px; }
+    .cat-featured { aspect-ratio: 16 / 9; max-height: 360px; }
+    .grid-2 { grid-template-columns: 1fr; }
   }
 </style>

@@ -33,7 +33,8 @@ function authorInitial(name?: string) {
   <Header />
 
   <main class="container">
-    <article class="article-single prose">
+    <article class="article-single">
+
       <header class="article-head">
         <a href={`/category/${categorySlugs[0]}/`}>
           <span class={`tag tag-${categorySlugs[0]}`}>{categories[0]}</span>
@@ -54,15 +55,8 @@ function authorInitial(name?: string) {
         </figure>
       )}
 
-      <div class="article-body" set:html={htmlContent}></div>
+      <div class="article-body prose" set:html={htmlContent}></div>
 
-      <footer class="article-footer">
-        <div class="tag-row">
-          {categorySlugs.map((s, i) => (
-            <a href={`/category/${s}/`}><span class={`tag tag-${s}`}>{categories[i]}</span></a>
-          ))}
-        </div>
-      </footer>
     </article>
   </main>
 
@@ -73,25 +67,22 @@ function authorInitial(name?: string) {
   .article-single {
     max-width: var(--content-width);
     margin: 0 auto;
-    padding: 36px 0 40px;
+    padding: 28px 0 40px;
   }
 
-  .article-head {
-    margin-bottom: 28px;
-    text-align: left;
-  }
+  .article-head { margin-bottom: 24px; }
 
   .article-head h1 {
     font-family: var(--font-body);
     font-weight: 700;
-    font-size: clamp(1.8rem, 3.6vw, 2.6rem);
-    line-height: 1.16;
-    letter-spacing: -0.02em;
-    margin: 12px 0 14px;
+    font-size: clamp(1.9rem, 4vw, 2.8rem);
+    line-height: 1.14;
+    letter-spacing: -0.022em;
+    margin: 14px 0 14px;
   }
 
   .lede {
-    font-size: 1.1rem;
+    font-size: 1.12rem;
     line-height: 1.55;
     color: var(--text-soft);
     margin-bottom: 18px;
@@ -111,7 +102,7 @@ function authorInitial(name?: string) {
     width: 28px;
     height: 28px;
     border-radius: 50%;
-    background: var(--accent);
+    background: linear-gradient(135deg, #ff3b30, #ff9500, #34c759, #007aff);
     color: white;
     font-size: 0.75rem;
     font-weight: 700;
@@ -121,8 +112,8 @@ function authorInitial(name?: string) {
   .byline-dot { color: var(--rule); }
 
   .article-hero {
-    margin: 0 0 28px;
-    border-radius: var(--radius);
+    margin: 0 0 32px;
+    border-radius: 12px;
     overflow: hidden;
   }
 
@@ -135,7 +126,7 @@ function authorInitial(name?: string) {
   .article-body :global(h2) {
     font-family: var(--font-body);
     font-weight: 700;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     margin-top: 1.8em;
     letter-spacing: -0.012em;
   }
@@ -143,12 +134,12 @@ function authorInitial(name?: string) {
   .article-body :global(h3) {
     font-family: var(--font-body);
     font-weight: 700;
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     margin-top: 1.4em;
   }
 
   .article-body :global(p) {
-    font-size: 1.0625rem;
+    font-size: 1.075rem;
     line-height: 1.72;
   }
 
@@ -156,31 +147,19 @@ function authorInitial(name?: string) {
     margin: 1.6em 0;
     padding: 0 0 0 1em;
     border-left: 3px solid var(--accent);
-    font-size: 1.05rem;
+    font-size: 1.08rem;
     color: var(--text-soft);
   }
 
   .article-body :global(img) {
     margin: 1.8em 0;
-    border-radius: var(--radius);
+    border-radius: 8px;
   }
 
   .article-body :global(ul), .article-body :global(ol) {
     padding-left: 1.4em;
-    line-height: 1.7;
+    line-height: 1.72;
   }
 
   .article-body :global(li) { margin: 0.3em 0; }
-
-  .article-footer {
-    margin-top: 48px;
-    padding-top: 20px;
-    border-top: 1px solid var(--rule);
-  }
-
-  .tag-row {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-  }
 </style>

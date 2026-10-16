@@ -2,8 +2,8 @@
 title: "The Quiet Power of a Capsule Wardrobe, and Why It Still Matters"
 date: 2026-10-15
 slug: "quiet-power-capsule-wardrobe"
-image: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?crop=entropy&cs=tinysrgb&w=1800&q=82"
-imageAlt: "A neatly folded stack of neutral-toned shirts on a wooden shelf"
+image: "https://images.pexels.com/photos/5706273/pexels-photo-5706273.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940&w=1800"
+imageAlt: "A minimal, neutral-toned wardrobe arrangement in soft natural light"
 categories: ["Fashion"]
 categorySlugs: ["fashion"]
 excerpt: "Fewer pieces, worn with intention — a meditation on the wardrobe that asks less of you."
